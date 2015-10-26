@@ -28,7 +28,7 @@
               'depth' => 0, 
               'hide_empty' => false, 
               'exclude' => 1,    
-              'walker' => new Walker_Menu_Progetti(),
+              'walker' => new Walker_Menu_Mobile(),
               'title_li' => ''
               ));
               ?>

@@ -49,7 +49,7 @@
         'depth' => 2, 
         'hide_empty' => false, 
         'exclude' => 1,    
-        // 'walker' => new Walker_Menu_Progetti(),
+        'walker' => new Walker_Menu_Project(),
         'title_li' => ''
         ));
         ?>
@@ -73,7 +73,7 @@
             'depth' => 2, 
             'hide_empty' => false, 
             'exclude' => 1,    
-            // 'walker' => new Walker_Menu_Progetti(),
+            'walker' => new Walker_Menu_Project(),
             'title_li' => ''
             ));
             ?>
