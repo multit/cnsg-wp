@@ -28,11 +28,10 @@
               'depth' => 0, 
               'hide_empty' => false, 
               'exclude' => 1,    
-<<<<<<< HEAD
+
               'walker' => new Walker_Menu_Mobile(),
-=======
-              'walker' => new Walker_Menu_Progetti(),
->>>>>>> 1f709d166a844b40abbba5a383816cfbc6df5cc5
+
+
               'title_li' => ''
               ));
               ?>
