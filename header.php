@@ -48,12 +48,8 @@
         'orderby'=>'ID',
         'depth' => 2, 
         'hide_empty' => false, 
-        'exclude' => 1,    
-<<<<<<< HEAD
+        'exclude' => 1,
         'walker' => new Walker_Menu_Project(),
-=======
-        // 'walker' => new Walker_Menu_Progetti(),
->>>>>>> 1f709d166a844b40abbba5a383816cfbc6df5cc5
         'title_li' => ''
         ));
         ?>
@@ -76,12 +72,8 @@
             'orderby'=>'ID',
             'depth' => 2, 
             'hide_empty' => false, 
-            'exclude' => 1,    
-<<<<<<< HEAD
+            'exclude' => 1,
             'walker' => new Walker_Menu_Project(),
-=======
-            // 'walker' => new Walker_Menu_Progetti(),
->>>>>>> 1f709d166a844b40abbba5a383816cfbc6df5cc5
             'title_li' => ''
             ));
             ?>
