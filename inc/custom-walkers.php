@@ -1,5 +1,6 @@
 <?php 
 
+<<<<<<< HEAD
 class Walker_Menu_Project extends Walker {
 
 
@@ -80,6 +81,10 @@ class Walker_Menu_Project extends Walker {
 
 
 class Walker_Menu_Mobile extends Walker {
+=======
+
+class Walker_Menu_Progetti extends Walker {
+>>>>>>> 1f709d166a844b40abbba5a383816cfbc6df5cc5
 
 
 	// var $db_fields = array( 
@@ -90,7 +95,11 @@ class Walker_Menu_Mobile extends Walker {
 	var $db_fields = array ('parent' => 'parent', 'id' => 'term_id');
 
 
+<<<<<<< HEAD
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
+=======
+ 		function start_lvl( &$output, $depth = 0, $args = array() ) {
+>>>>>>> 1f709d166a844b40abbba5a383816cfbc6df5cc5
                 if ( 'list' != $args['style'] )
                         return;
                 $indent = str_repeat("\t", $depth);
@@ -139,6 +148,7 @@ class Walker_Menu_Mobile extends Walker {
                 if ( ! $cat_name ) {
                         return;
                 }
+<<<<<<< HEAD
 
                 // Controlla se ci sono submenu e regola il link di conseguenza
                 $termchildren_num  = count ( get_term_children( $category->term_id, $category->taxonomy) );
@@ -197,11 +207,61 @@ class Walker_Menu_Mobile extends Walker {
                 // if ( ! empty( $args['show_count'] ) ) {
                 //         $link .= ' (' . number_format_i18n( $category->count ) . ')';
                 // }
+=======
+                //$link = '<a href="' . esc_url( get_term_link( $category ) ) . '" ';
+                $link = "<a href='#'";
+
+                if ( $args['use_desc_for_title'] && ! empty( $category->description ) ) {
+                        /**
+                         * Filter the category description for display.
+                         *
+                         * @since 1.2.0
+                         *
+                         * @param string $description Category description.
+                         * @param object $category    Category object.
+                         */
+                        $link .= 'title="' . esc_attr( strip_tags( apply_filters( 'category_description', $category->description, $category ) ) ) . '"';
+                }
+                $link .= "><h3>";
+                $link .= $cat_name . '</h3></a>';
+                if ( ! empty( $args['feed_image'] ) || ! empty( $args['feed'] ) ) {
+                        $link .= ' ';
+                        if ( empty( $args['feed_image'] ) ) {
+                                $link .= '(';
+                        }
+                        $link .= '<a href="' . esc_url( get_term_feed_link( $category->term_id, $category->taxonomy, $args['feed_type'] ) ) . '"';
+                        if ( empty( $args['feed'] ) ) {
+                                $alt = ' alt="' . sprintf(__( 'Feed for all posts filed under %s' ), $cat_name ) . '"';
+                        } else {
+                                $alt = ' alt="' . $args['feed'] . '"';
+                                $name = $args['feed'];
+                                $link .= empty( $args['title'] ) ? '' : $args['title'];
+                        }
+                        $link .= '>';
+                        if ( empty( $args['feed_image'] ) ) {
+                                $link .= $name;
+                        } else {
+                                $link .= "<img src='" . $args['feed_image'] . "'$alt" . ' />';
+                        }
+                        $link .= '</a>';
+                        if ( empty( $args['feed_image'] ) ) {
+                                $link .= ')';
+                        }
+                }
+                if ( ! empty( $args['show_count'] ) ) {
+                        $link .= ' (' . number_format_i18n( $category->count ) . ')';
+                }
+>>>>>>> 1f709d166a844b40abbba5a383816cfbc6df5cc5
                 if ( 'list' == $args['style'] ) {
 
                         $output .= "\t<li";
                         
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1f709d166a844b40abbba5a383816cfbc6df5cc5
                         // $css_classes = array(
                         //         'cat-item',
                         //         'cat-item-' . $category->term_id,
@@ -216,6 +276,12 @@ class Walker_Menu_Mobile extends Walker {
                                 }
                         }
 
+<<<<<<< HEAD
+=======
+                        // $css_classes[] = ($depth == 0 ) ? 'has-submenu': '';
+
+
+>>>>>>> 1f709d166a844b40abbba5a383816cfbc6df5cc5
                         /**
                          * Filter the list of CSS classes to include with each category in the list.
                          *
@@ -228,6 +294,7 @@ class Walker_Menu_Mobile extends Walker {
                          * @param int    $depth       Depth of page, used for padding.
                          * @param array  $args        An array of wp_list_categories() arguments.
                          */
+<<<<<<< HEAD
                         // $css_classes = implode( ' ', apply_filters( 'category_css_class', $css_classes, $category, $depth, $args ) );
                         // $output .=  ' class="' . $css_classes . '"';
                         
@@ -236,6 +303,13 @@ class Walker_Menu_Mobile extends Walker {
                         $output .=  ' class="' . $css_classes;
 
                         
+=======
+                        $css_classes = implode( ' ', apply_filters( 'category_css_class', $css_classes, $category, $depth, $args ) );
+                        // $output .=  ' class="' . $css_classes . '"';
+                        $output .=  ' class="' . $css_classes;
+
+                        $output .= ($depth == 0 ) ? 'has-submenu" ><i class="fa fa-chevron-right"></i>': '">';
+>>>>>>> 1f709d166a844b40abbba5a383816cfbc6df5cc5
 
                         $output .= "$link";
                 } else {
@@ -263,6 +337,13 @@ class Walker_Menu_Mobile extends Walker {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 1f709d166a844b40abbba5a383816cfbc6df5cc5
 	}
 
 
