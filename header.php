@@ -78,15 +78,53 @@
          <b>Project Areas</b>   
          <ul class="medium-block-grid-2 large-block-grid-5">
         <?php 
-        wp_list_categories( array(
-            'orderby'=>'ID',
-            'depth' => 2, 
-            'hide_empty' => false, 
-            'exclude' => 1,
-            'walker' => new Walker_Menu_Project(),
-            'title_li' => ''
-            ));
+        // wp_list_categories( array(
+        //     'orderby'=>'ID',
+        //     'depth' => 2, 
+        //     'hide_empty' => false, 
+        //     'exclude' => 1,
+        //     'walker' => new Walker_Menu_Project(),
+        //     'title_li' => ''
+        //     ));
             ?>
+
+        <?php
+        $args = array( 'post_type' => 'progetto' );
+
+        $menulinks = get_posts( $args );
+        $curr_cat = '';
+        foreach ( $menulinks as $post ) : setup_postdata( $post ); ?>
+            <?php //print_r($post); 
+
+            $categoria  = get_the_category($post->ID);
+            // print_r($categoria);
+            echo $categoria->cat_name;
+            $cat_parent = get_category ( $categoria[0]->parent );
+            // print_r($cat_parent);
+            ?>
+            <li>
+
+            <?php    
+            if (!$curr_cat == $categoria[0]->parent ) {
+                echo 'categoria iniziale' . $cat_parent->name;
+            }
+
+
+
+            ?>
+
+            
+                <a href="<?php the_permalink(); ?>"><?php echo $post->post_title ?></a>
+            </li>
+
+
+        <?php 
+
+        $curr_cat = $categoria[0]->parent;
+        endforeach; 
+        wp_reset_postdata();
+        ?>
+
         </ul>   
         
        </div> </div></div>
