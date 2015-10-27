@@ -1,0 +1,42 @@
+/*Nav*/
+
+nav.menutop {	
+	position: fixed;
+	z-index: 50;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #FFFFFF;
+}
+
+div.menutop-box  {
+	background-color: #F4F4ED;
+	height: 67px;
+	width: 100%;
+	padding:20px 0 0 0;
+}
+
+div.menutop ul {
+	border:0px solid #000;
+
+}
+div.menutop ul:first-child {
+/*	padding: 0px;
+	margin: 0 0 0 -20px;*/
+}
+div.menutop ul#scelta_lingua {	
+	margin: 0 0 0 0px;
+}
+div.menutop ul#scelta_lingua li:last-child {
+	border-left: 1px solid #CCC;
+	padding: 0 0 0 10px;
+	margin: 0 0 0 10px;
+}
+ul#social li {
+	color: #6F6F6E;
+	margin: -7px 0 0 0;
+}
+
+ul#social li h3 {
+	color: #6F6F6E;
+}

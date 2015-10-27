@@ -1,0 +1,379 @@
+.columns {
+	border: 0px solid #CCC;
+}
+
+
+/*Un Po di reset*/
+
+a {
+	color: #888;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+    
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.titolino {
+	font-family: 'Montserrat-light';
+	text-transform: uppercase;
+	font-size: 1.2em;
+	letter-spacing: 0.05em;
+}
+b.titolino {
+	font-family: 'Montserrat-bold';
+}
+
+.sidecolumn {
+	border-left: 1px solid #CCC;
+}
+
+.titolo_big {
+	font-family: 'Montserrat-bold';
+	text-transform: uppercase;
+	font-size: 2.2em;
+	letter-spacing: 0.01em;
+}
+
+
+.titolo_mega {
+	font-family: 'Montserrat-bold';
+	text-transform: uppercase;
+	font-size: 3.2em;
+	letter-spacing: 0.01em;
+}
+
+.random_colored {
+	color: #f1ebda;
+}
+
+.hp-panel {
+	border: 0px solid #ccc;
+	margin-bottom: 30px;
+}
+
+
+
+
+/*Mappa progetti popup*/
+
+
+div#projects_map {
+	background-color: #EFEFE8;
+	font-size: .9em;
+	overflow: hidden;
+	height: 0px;
+	border: 0px solid #CCC;
+	position: fixed;
+	top: 67px;
+	z-index: 51;
+	width: 100%;
+}
+div#projects_map ul li {
+	font-family: 'Roboto-slab';	
+	font-size: .9em;
+	line-height: 1.2em;
+}	
+div#projects_map ul li a {
+	color: #333;
+	margin-bottom: 10px;
+	display: block;
+}
+div.sitemap {
+	/*margin-top: 30px;*/
+    /*margin-bottom: 50px;*/
+    padding: 30px 100px 20px 100px;
+}
+div.sitemap b {
+	font-family: 'Montserrat-Regular';
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 300;
+	padding-bottom: 20px;
+	display: block;
+}
+
+
+/*Mappona progetti*/
+
+div#projects_map_mega {
+	background-color: #EFEFE8;
+	position: fixed;
+	top:0px;
+	height: 100%;
+	width: 100%;
+	z-index: 102;
+	display: none;
+	opacity: 0;
+	padding-top:66px;
+	/*margin-left: -5px;*/
+}
+
+
+div#projects_map_mega ul li a {
+	color: #333;
+	margin-bottom: 10px;
+	display: block;
+}
+
+
+/* HP News Styles */
+
+.hp-news {
+	font-family: 'Roboto-Slab-light';
+	font-size: 1em !important; 
+	line-height: 1.3em;
+	margin-bottom: 20px;
+	display: block;
+	margin-bottom: 40px;
+}
+.hp-news-bar {
+	height: 10px;
+	display: block;
+	width: 100%;
+	margin-bottom: 6px;
+}
+.hp-news-occhiello { 
+	height: 40px; 
+	font-family:'Montserrat-Regular';
+	text-transform: uppercase;
+	font-size: .9em; 
+	line-height: 1.1em;
+	color: #888;
+}
+.hp-news-titolo { 
+	font-family: 'Roboto-Slab'; 
+	font-size: 1.7em; 
+	line-height: 1.1em;
+	letter-spacing: -.03em; 
+	padding-bottom: 10px; 
+	color: #555;
+}
+.hp-news-dateinfo {
+	border-bottom: 1px solid #CCC;
+	padding: 5px 0 5px 0;
+	margin-bottom: 10px;
+}
+.hp-news-dateinfo i.fa {
+	float: right;
+	color: #999;
+	cursor: pointer;
+	padding: 4px;
+	border-radius: 40%;
+}
+.hp-news-dateinfo i.fa:hover {
+	background-color: #666;				
+	}
+.hp-news-info {
+	padding: 0px;
+	border: 0px solid #CCC;
+	height: 0px;
+	margin: 14px 0 10px 10px;
+	overflow: hidden;
+}
+
+/*Slider*/
+
+section#slider {
+	height: 400px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+
+/*Mega Map*/
+
+
+section#site-HP-map {
+	padding: 50px 100px 90px;
+}
+
+ul.color-mega-map {
+	margin-bottom: 30px;
+}
+
+ul.color-mega-map li {
+	font-family: 'Roboto-Slab';
+	font-size: .98em;
+	line-height: 1.1em;
+	padding-top: 100px;
+	background: #fff url('../images/icon01.png') 50% 0 no-repeat;
+}
+
+
+
+
+
+/*Fonts Styles*/
+
+.big {
+	font-family: 'Roboto-Slab';
+	font-size: 3em;
+	line-height: 1.1em;
+	color: #4d4d4d;
+	letter-spacing: -.02em;
+}
+.big-light {
+	font-family: 'Roboto-Slab-light';
+	font-size: 3em;
+	line-height: 1.1em;
+	color: #666;
+	letter-spacing: -.02em;
+}
+
+
+
+
+/*Articolo Singolo*/
+
+section.single_article {
+	margin: 30px 0 0 0;
+}
+
+p.categoria {
+	font-family:'Montserrat-Regular';
+	text-transform: uppercase;
+	font-size: 1em; 
+	line-height: 1.1em;
+	color: #888;
+	margin: 0 0 10px 0;
+}
+p.titolo {	
+	margin: 0 0 30px 0;
+}
+p.data {
+	font-family: 'Roboto-Slab';
+	font-size: 1.2em;
+	color: #777;
+	margin-bottom: 8px;	
+}
+p.key-autore, p.key-keywords  {
+	font-size: 1em;
+	line-height: 1.3em;
+	margin: 0 0 0 20px;
+	padding: 0 20px 0 20px;
+	border-left:1px solid #ccc;
+}
+p.key-autore {
+	padding-bottom: 20px;
+}
+p.key-keywords {
+	padding-top: 20px;
+	border-top:1px solid #ccc;
+}
+img.single-article-featured {
+	/*width: 240px;*/
+/*	height: 200px;
+*/	margin: 0 0 20px 20px;
+	padding-right: 20px;
+}
+
+
+
+/*Pagine di progetto */
+
+article {
+	min-height: 800px;
+	
+}
+
+
+img.thumb-288 {
+	width: 288px;
+	height: 138px;
+	margin-bottom: 50px;	
+}
+
+.titolo-sidebox {
+	padding: 10px 0 20px 0;
+}
+div.colored-box {
+	height: 10px;
+	width: 50%;
+	margin: 0 0 20px 0;
+}
+div.colored-box:first-child {
+	height: 10px;
+	width: 50%;
+	margin: 0 0 0 0;
+}
+
+ul.staff-list li {
+	text-align: center;
+	margin: 0 0 40px 0;
+}
+
+
+.staff-mini-image {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	margin: 0 0 10px 0;
+}
+.staff-big-image {
+	margin-top: 20px;
+}
+
+ul.social-list {
+	margin: -5px 0 0 -5px;
+	font-size: 1em;
+}
+
+ul.social-list li {
+	margin: 0 6px 0 0;
+}
+
+a.pdf-download {
+	position: relative;
+	display: block;
+	background: url(../images/pdf-icon.png) no-repeat 0 0 ;
+	padding: 0 0 0 50px;
+	margin: 20px 0 35px 0;
+	min-height: 50px;
+}
+b.attach_size {
+	float: left;
+	position: absolute;
+	top: 45px;
+	left: 0;
+}
+.right-column {
+	border-left:1px solid #ccc;
+	padding-left: 10px;
+	min-height: 780px;
+
+}
+.right-column:before {
+/*    content:"";
+    position: absolute;
+    top: 0;
+    bottom: -70%;
+    left: -5px;
+    border-left:1px solid #ccc;
+    width: 150px;
+    min-height: 400px;
+    z-index: -1;*/
+}
+
+.first-row-padded {
+	display: block;
+	min-height: 200px;
+}
+
+/*Footer styles*/
+
+.footer {
+	min-height: 400px;
+	background: #D2B569 url(../images/cnsg.logo.white.png) no-repeat 50% 20px;
+	-webkit-background-size: 80px;
+	background-size: 100px;
+	padding: 160px 0 0 0;
+	margin: 60px 0 0 0;
+	color: #333;
+	text-align: center;
+}

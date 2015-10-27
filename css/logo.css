@@ -1,0 +1,74 @@
+/*Logo*/
+
+.logo {	
+	background: url('../images/logo40.exec01.svg') 50% 0% no-repeat;
+	background-size: 80px;
+}
+#logo-spacer {
+	height: 200px;
+}
+.logo p {
+	font-family: 'Montserrat-Regular';
+	text-transform: uppercase;	
+	color: #AC9865;
+	letter-spacing: 0.2em;
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+}
+p.logo_payoff {
+	font-family: 'Georgia';
+	font-style: italic;
+	font-size: 0.9em;
+	letter-spacing: 0.2em;
+	text-transform: lowercase;
+	color: #666;
+	text-align: center;
+	background: transparent url('../images/logo-shadow.png') 50% 100% no-repeat;
+	height: 80px;
+	clear: both;
+	float: none;
+	padding: 20px 0 0 0;
+}
+.logo b {
+	font-family: 'Montserrat-bold';
+	color: #732706;
+	font-weight: 700;
+}
+p.logo_ita {
+	letter-spacing:0.1em;
+	float: left;
+	text-align: right; 
+	width: 50%;
+	border:0px solid #ccc;
+	padding-right: 50px;
+}
+p.logo_en {
+	float: right;
+	text-align: left; 
+	width: 50%;
+	border:0px solid #ccc;
+	padding-left: 50px;
+}
+.logo_large {
+	background-size: 80px;
+	padding: 35px 0 0 0;
+	margin: 20px auto 0 auto;
+}
+.logo_large p.logo_payoff {
+	padding-top: 50px;
+	height: 110px;
+	}
+
+.logo_medium {
+	background-size: 140px;
+	padding: 180px 0 0 0;
+	margin:50px 0 40px 0;
+	
+}
+.logo_small {
+	background-size: 160px;
+	padding-top: 250px;
+	margin:65px 0 0 0;
+}
+

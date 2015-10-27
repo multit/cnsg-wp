@@ -1,0 +1,50 @@
+.m-menutop  {
+	height: 67px;
+	width: 100%;
+	padding:20px 0 0 0;	
+}
+
+.inner-wrap {
+	height: 100%;
+	padding: 10px;	
+}
+.off-canvas-wrap {
+	margin: -67px 0 0 0;
+	height: 100%;	
+}
+.inner-wrap:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 100%;
+	z-index: -1;
+	background-color: #F4F4ED;
+}
+aside.left-off-canvas-menu {
+	padding-top: 120px;
+	background: #333333 url('../images/cnsg.logo.white.png') no-repeat 50% 40px;
+	background-size: 40px;
+}
+ul.left-menu-mobile li a h3, ul.left-submenu li a h3 {
+	color: #fff;
+	display: inline;
+	font-size: 0.7em;
+}
+
+.left-submenu {
+	height: 100%
+}
+
+ul.off-canvas-list li a {
+	padding: 5px 18px 8px 18px;
+}
+
+.left-off-canvas-menu ul.off-canvas-list li.has-submenu > a:after {    
+    content: '';
+}
+li.has-submenu i {
+	padding: 0 0 0 10px;
+	font-size: 0.6em;
+}
