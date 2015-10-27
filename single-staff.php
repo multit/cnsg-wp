@@ -19,7 +19,7 @@
         <!-- begin colonna articolo -->
         <div class="columns medium-6">
           <div class="first-row-padded">
-          <h3 stylw="color:">ICGH Staff members</h3>
+          <h3 style="color:#AC9865">ICGH Staff members</h3>
           <h1 ><?php the_title(); ?></h1>
           </div>       
           <?php the_content( ); ?>      
@@ -27,7 +27,6 @@
         </div>
 
         <div class="columns medium-3 show-for-medium-up">
-
 
         <div class="first-row-padded"></div>       
         <div class="right-column">

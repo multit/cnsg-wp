@@ -1,6 +1,35 @@
 <?php get_header(); ?>
 
 
+<?php 
+
+// Settaggio di alcune variabili iniziali
+
+
+    //wp_reset_postdata();  
+    setup_postdata($post);
+    $categories = get_the_category();
+
+    if ( ! empty( $categories ) ) {  
+    foreach( $categories as $category ) {
+        $categoria .= esc_html( $category->name );
+        $categoria_parent = get_category ($category->category_parent);  // id della categoria genitore
+        $categoriaID = $category->term_id;
+        }
+    }
+
+    if(function_exists('rl_color')){
+        $rl_category_color = rl_color($categoria_parent->term_id);
+    } else  {
+        $rl_category_color = '#ccc';
+    }
+
+    // print_r($categoria_parent);
+    // Spinge la variabile come post ai vari templati caricat con get_template_part
+    set_query_var( 'rl_category_color', $rl_category_color );
+
+?>
+
 
 
 
@@ -29,24 +58,10 @@
 
     <div class="first-row-padded">
 
-        <?php 
-        //wp_reset_postdata();  
-        setup_postdata($post);
-        $categories = get_the_category();
-
-        if ( ! empty( $categories ) ) {  
-        foreach( $categories as $category ) {
-            $categoria .= esc_html( $category->name );
-            $categoria_parent = get_category ($category->category_parent);  // id della categoria genitore
-            $categoriaID = $category->term_id;
-             // $categoria .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
-        }
-        }
-
-        ?>
 
 
-      <h3 style="color:#CCB879"><?php echo $categoria_parent->name ?></h3>
+
+      <h3 style="color:<?php echo $rl_category_color; ?>"><?php echo $categoria_parent->name ?></h3>
       <h1><?php the_title(); ?></h1>
     </div>
     <?php the_content(); ?>
@@ -78,7 +93,7 @@
 
     </div>
 
-    <div class="colored-box" style="background-color:#CCB879"></div>
+    <div class="colored-box" style="background-color:<?php echo $rl_category_color; ?>"></div>
 
 
       <h2>Staff</h2>
@@ -91,7 +106,7 @@
         foreach ( $staffMembers as $post ) : setup_postdata( $post ); ?>
             <li>
                 <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'staff-mini-image' ) ); ?>
-                <a href="<?php the_permalink(); ?>"><h4 style="color:#CCB879"><?php the_title(); ?></h4></a>
+                <a href="<?php the_permalink(); ?>"><h4 style="color:<?php echo $rl_category_color; ?>"><?php the_title(); ?></h4></a>
                 <h5><?php the_field('ruolo'); ?><br>
                 <a href="mailto:<?php the_field('email'); ?>"><b><?php the_field('email'); ?></b></a>
                 </h5>
@@ -138,7 +153,7 @@
 
         if (!empty($documenti)):  
         ?>    
-            <div class="colored-box" style="background-color:#CCB879"></div>
+            <div class="colored-box" style="background-color:<?php echo $rl_category_color; ?>"></div>
             <h2>Documents</h2>
             <ul>
             <?php foreach ( $documenti as $post ) : setup_postdata( $post ); 
@@ -157,7 +172,7 @@
 
         if (!empty($documenti)):  
         ?>    
-            <div class="colored-box" style="background-color:#CCB879"></div>
+            <div class="colored-box" style="background-color:<?php echo $rl_category_color; ?>"></div>
             <h2>Papers</h2>
             <ul>
             <?php foreach ( $documenti as $post ) : setup_postdata( $post );
