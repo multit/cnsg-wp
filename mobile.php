@@ -22,17 +22,36 @@
 
 
     <ul class="off-canvas-list left-menu-mobile">
-          <?php 
-          wp_list_categories( array(
-              'orderby'=>'ID',
-              'depth' => 0, 
-              'hide_empty' => false, 
-              'exclude' => 1,
-              'walker' => new Walker_Menu_Mobile(),
-              'title_li' => ''
-              ));
-              ?>
-    </ul>   
+
+
+      <li class=""><a href="#mission"><h3>Mission</h3></a></li>
+      <li class=""><a href="#staff"><h3>Staff</h3></a></li>
+      <li class="has-submenu"><a href="#"><h3>Progetti</h3></a>
+        <ul class="left-submenu">
+          <li class="back"><a href="#"><h3>Back</h3></a></li>
+        <?php 
+        $args = array (
+            'menu' => 'Menu Categorie',
+            'depth' => 3,
+            'container' => false,
+            'items_wrap' => '%3$s',
+            // 'menu_class' => 'off-canvas-list left-menu-mobile cazzon',
+            'link_before' => '<h3>',
+            'link_after' => '</h3>',
+            'walker' => new Menu_Principale_Mobile_Walker()
+        );
+        wp_nav_menu($args);
+        ?>
+        </ul></li>
+        <li class=""><a href="#news"><h3>News</h3></a></li>
+        <li class=""><a href="#search"><h3>Search</h3></a></li>
+
+    </ul> 
+
+
+
+
+
 
     </aside>
 

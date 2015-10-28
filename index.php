@@ -120,7 +120,7 @@ get_template_part( 'mobile', get_post_format() );
         </div>
         <div class="columns large-2 show-for-large-up">
         <p class="titolino">Fast <b>Facts</b></p>
-          <?php killer_charts_tag (1,3);  ?>
+          <?php //killer_charts_tag (1,3);  ?>
 
 
         </div>
