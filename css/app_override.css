@@ -15,8 +15,8 @@ a:hover {
     
 ul {
     list-style: none;
-    padding: 0 !important;
-    margin: 0 !important;
+/*    padding: 0 !important;
+    margin: 0 !important;*/
 }
 
 .titolino {
@@ -121,7 +121,9 @@ div#projects_map_mega ul li a {
 	display: block;
 }
 
+div.hp-mega-menu {
 
+}
 /* HP News Styles */
 
 .hp-news {
@@ -189,24 +191,31 @@ section#slider {
 /*Mega Map*/
 
 
-section#site-HP-map {
-	padding: 50px 100px 90px;
+
+div.hp-mega-map {
+	margin-bottom: 120px;
 }
 
-ul.color-mega-map {
-	margin-bottom: 30px;
-}
-
-ul.color-mega-map li {
+ul.hp-mega-map li {
 	font-family: 'Roboto-Slab';
 	font-size: .98em;
 	line-height: 1.1em;
 	padding-top: 100px;
-	background: #fff url('../images/icon01.png') 50% 0 no-repeat;
+	/*background: #fff url('../images/icon01.png') 50% 0 no-repeat;*/
+	background-repeat: no-repeat;
+}
+ul.hp-mega-map li i.hpicons {
+	display: block;
+	margin-bottom: 25px;
 }
 
-
-
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+    font-size: 60px;
+	font-style: normal;
+	margin-left: 20px;
+}
 
 
 /*Fonts Styles*/

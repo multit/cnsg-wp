@@ -4,31 +4,19 @@
 get_template_part( 'mobile', get_post_format() );  
 ?>
 
+
+
+<?php
+get_template_part( 'hp-mega-map', get_post_format() );  
+?>
+
+
 <div class="row show-for-medium-up">
 
 
 
-    <div class="columns small-12 text-center">
-        <!-- <p class="titolo_mega random_colored">What we do</p> -->
-        <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-5 color-mega-map" >
-          <li style="background-image: url('<?php bloginfo(template_directory ); ?>/images/icon01.png'); "><a class="font-colore01" href="">Basic Translational and Clinic Research</a></li>
-          <li style="background-image: url('<?php bloginfo(template_directory ); ?>/images/icon02.png'); "><a class="font-colore02" href="">Operational and Implementation Research</a></li>
-          <li style="background-image: url('<?php bloginfo(template_directory ); ?>/images/icon03.png'); "><a class="font-colore03" href="">Migration Biology</a></li>
-          <li style="background-image: url('<?php bloginfo(template_directory ); ?>/images/icon04.png'); "><a class="font-colore04" href="">Health Systems Research</a></li>
-          <li style="background-image: url('<?php bloginfo(template_directory ); ?>/images/icon05.png'); "><a class="font-colore05" href="">Education and Training - Capacity Building</a></li>
-          <li style="background-image: url('<?php bloginfo(template_directory ); ?>/images/icon06.png'); "><a class="font-colore06" href="">International Cooperation</a></li>
-          <li style="background-image: url('<?php bloginfo(template_directory ); ?>/images/icon07.png'); "><a class="font-colore07" href="">Partnership with International Organizations and with the UN</a></li>
-          <li style="background-image: url('<?php bloginfo(template_directory ); ?>/images/icon08.png'); "><a class="font-colore08" href="">Maternal, Newborn and Child Health (MNCH)</a></li>
-          <li style="background-image: url('<?php bloginfo(template_directory ); ?>/images/icon09.png'); "><a class="font-colore09" href="">Traditional and Integrated Medicine</a></li>
-          <li style="background-image: url('<?php bloginfo(template_directory ); ?>/images/icon10.png'); "><a class="font-colore10" href="">Policy and Advocacy</a></li>
-        </ul>        
 
-    </div>
-
-
-
-
-     <div class="columns small-12 text-center"><a href="#" id="show-mega-map"><b class="titolino random_colored" >our PROJECT full INDEX</b></a></div>
+     
 
 
 

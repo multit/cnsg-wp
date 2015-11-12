@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/libraries.min.css">    
 <!--     <link rel="stylesheet" href="<?php //bloginfo('template_directory'); ?>/css/app.min.css">
  -->
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/flaticon.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app_override.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/stili_paragrafo.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/logo.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/navigazione-top.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/small_screens.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/mobile.css">  
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/mobile.css">
+    
 
 
 
@@ -91,7 +93,7 @@
             // 'items_wrap' => '%3$s',
             'link_before' => '<h3>',
             'link_after' => '</h3>',
-            'menu_class' => 'medium-block-grid-2 large-block-grid-5',
+            'menu_class' => 'medium-block-grid-3 large-block-grid-6',
             'walker' => new Menu_Principale_Walker()
         );
         wp_nav_menu($args);

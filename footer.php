@@ -36,7 +36,7 @@
 
     <script src="<?php bloginfo('template_directory'); ?>/js/vendor/libraries.min.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/js/vendor/foundation.min.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/js/app.min.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/js/app.js"></script>
    
 	<?php wp_footer(); ?>
 
