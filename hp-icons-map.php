@@ -1,7 +1,7 @@
-<div class="row hp-mega-map">
+<div class="row hp-icons-map">
     <div class="columns small-12 text-center">
         <!-- <p class="titolo_mega random_colored">What we do</p> -->
-        <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-6 hp-mega-map" >
+        <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-6 hp-icons-map" >
 
 <?php
 $args = array(

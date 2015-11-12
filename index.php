@@ -6,13 +6,23 @@ get_template_part( 'mobile', get_post_format() );
 
 
 
-<?php
-get_template_part( 'hp-mega-map', get_post_format() );  
-?>
+<?php get_template_part( 'hp-icons-map', get_post_format() );   ?>
+
+
+
+<div class="row">
+  <div class="columns small-12">
+    
+ <div class="columns small-12 text-center"><a href="#" id="show-mega-map"><b class="titolino random_colored" >our PROJECT full INDEX</b></a></div>
+
+
+
+  </div>
+</div>
+
 
 
 <div class="row show-for-medium-up">
-
 
 
 

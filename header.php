@@ -16,13 +16,9 @@
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/small_screens.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/mobile.css">
     
-
-
-
     <script src="<?php bloginfo('template_directory'); ?>/js/vendor/modernizr.min.js"></script>
 
     <?php wp_head(); ?>
-
 
   </head>
   <body>
@@ -34,45 +30,14 @@
 <header class="show-for-medium-up">
 
 <!-- Site mega map -->
-    <div id="projects_map_mega">
-    
-        <!-- logo per big screens -->
-        <div class="row show-for-large-up"><a href="index.html">
+    <div id="fullscreen-mega-map">
+    <div class="row">
 
-            <div class="columns small-12 logo logo_large">
-                <p class="logo_en">Italian Center For <b>Global Health</b></p>
-                <p class="logo_ita">Centro Nazionale <b>per la Salute Globale</b></p>                
-                <p class="logo_payoff">fightin health inequalities</p>
-            </div>
+    <?php get_template_part( 'fullscreen-mega-map', get_post_format() );   ?>
 
-        </a></div>
-        <!-- end logo -->
-        
-    
-    <div class="row ">
-        <div class="columns small-12 sitemap">
-         <b>Project Areas</b>   
+    </div></div>
 
-    
-<!-- // Menu con wp_nav_menu() & Menu_Principale_Walker extends Walker  -->
-        <?php 
-        $args = array (
-            'menu' => 'Menu Categorie',
-            'depth' => 3,
-            'container' => false,
-            // 'items_wrap' => '%3$s',
-            'link_before' => '<h3>',
-            'link_after' => '</h3>',
-            'menu_class' => 'medium-block-grid-2 large-block-grid-5',
-            'walker' => new Menu_Principale_Walker()
-        );
-        wp_nav_menu($args);
-
-        ?>
- 
-       </div> </div></div>
-
-     <!-- End Site mega map -->
+<!-- End Site mega map -->
     
     
     
@@ -121,22 +86,19 @@
     
             <div class="columns medium-8 show-for-medium-up">
                 <ul class="inline-list">
-                    <li><a href=""><h3>Mission</h3></a></li>
-                    <li><a href=""><h3>Staff</h3></a></li>
-                    <li><a href="#" id="menutop_projects"><h3>Projects&nbsp;<i id="menuarrow"class="fa fa-chevron-down" style="display:inline"></i></h3></a></li>
-                    <li><a href=""><h3>News</h3></a></li>
-                    <li><a href=""><h3>Search</h3></a></li>
+                    <li class="menu-btn"><a href=""><h3>Mission</h3></a></li>
+                    <li class="menu-btn"><a href=""><h3>Staff</h3></a></li>
+                    <li class="menu-btn"><a href="#" id="menutop_projects"><h3>Projects&nbsp;<i id="menuarrow"class="fa fa-chevron-down" style="display:inline"></i></h3></a></li>
+                    <li class="menu-btn"><a href=""><h3>News</h3></a></li>
+                    <li class="menu-btn"><a href=""><h3>Search</h3></a></li>
                 </ul>
             </div>
     
-            <div class="columns medium-4 show-for-medium-up ">
+            <div class="columns medium-4 show-for-medium-up">
 
-                <ul class="inline-list right" id="scelta_lingua">
-                    <li><a href=""><h3>ITA</h3></a></li>
-                    <li><a href=""><h3>EN</h3></a></li>
-                </ul>              
-
-                <ul id="social" class="inline-list right" style="overflow:visible">
+            
+            <div class="right">
+                <ul id="social" class="inline-list" style="display:none" >
                 <li><h3>
                   <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></li></span>
                 </h3>
@@ -148,6 +110,11 @@
                 </h3>
                 </ul>
 
+                <ul class="inline-list" id="scelta_lingua">
+                    <li><a href=""><h3>ITA</h3></a></li>
+                    <li><a href=""><h3>EN</h3></a></li>
+                </ul>  
+            </div>
 
             </div>
     

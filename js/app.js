@@ -30,25 +30,43 @@ var app = (function(document, $) {
           slideshowSpeed: 5000
 			  });
 
+
+
+
+      $('li.fs-mega-map').each(function(index, el) {
+              $(this).hover(function() {
+                /* Stuff to do when the mouse enters the element */
+                var bgcolor = $(this).attr('bgc');
+                $(this).css('backgroundColor', bgcolor);
+              }, function() {
+                /* Stuff to do when the mouse leaves the element */
+                $(this).css('backgroundColor', 'transparent');
+              });
+      });
+
+
       // Mostra la mappa full screen del sito
       // Comandi dal link
       $('#show-mega-map').click(function(event) {
           event.preventDefault();
-        if ($('#projects_map_mega').css('display') === 'none') {
-          $('body').css('overflow', 'hidden');
-          $('#projects_map_mega').css('overflow', 'auto');
-          //$('#projects_map_mega').css('top',$('body').scrollTop() )
-          TweenLite.fromTo ('#projects_map_mega' , 0.8, {opacity:0}, {opacity:1,display:'block'});         
-        } else{
-          TweenMax.to('#projects_map_mega', 0.6, {opacity:0});
-        }
+          if ($('#fullscreen-mega-map').css('display') === 'none') {
+            $('body').css('overflow', 'hidden');
+            $('#fullscreen-mega-map').css('overflow', 'auto');
+            TweenLite.fromTo ('#fullscreen-mega-map' , 0.8, {opacity:0}, {opacity:1,display:'block'});         
+          } else{
+            TweenMax.to('#fullscreen-mega-map', 0.6, {opacity:0});
+          }
       });      
       // Chiude la mappa
-      $('#projects_map_mega').click(function(event) {        
-          event.preventDefault();
+      $('#fullscreen-mega-map').click(function(event) {        
+          //event.preventDefault();
           if ($(this).css('display') === 'block') {                
             TweenLite.fromTo ($(this) , 0.2, {opacity:1}, {opacity:0,display:'none'});
             $('body').css('overflow', 'auto');
+            $('li.menu-btn').each(function(index, el) {
+                $(this).css('backgroundColor', 'transparent');
+                console.log("elemento: " + $(this));
+            });
           }
       });    
 
@@ -73,17 +91,27 @@ var app = (function(document, $) {
 
       // Apre il menu superiore con la mappa dei progeti
       $('#menutop_projects').click(function(event) {
-          //$('#menu_project').toggleClass('aperto');
-          if ($('#projects_map').css('height') === '0px') {
-            // TweenMax.to('#projects_map', .5, {height:'auto', ease:'Quad.easeIn'});
-            //TweenMax.fromTo('#projects_map', .5, {height:'0'},{height:'60%', ease:'Quad.easeIn'});
-            TweenMax.set('#projects_map',{height:'auto'});
-            TweenMax.from('#projects_map',0.5,{height:0,ease:Quad.easeOut});
-            $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-up" style="display:inline"></i>' );
+          // if ($('#projects_map').css('height') === '0px') {
+          //   TweenMax.set('#projects_map',{height:'auto'});
+          //   TweenMax.from('#projects_map',0.5,{height:0,ease:Quad.easeOut});
+          //   $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-up" style="display:inline"></i>' );
+          // } else{
+          //   TweenMax.to('#projects_map', 0.6, {height:0});
+          //   $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-down" style="display:inline"></i>' );
+          // }
+          event.preventDefault();
+          if ($('#fullscreen-mega-map').css('display') === 'none') {
+            $('body').css('overflow', 'hidden');
+            $(this).parent().css('backgroundColor', '#EFEFE8');
+            $('#fullscreen-mega-map').css('overflow', 'auto');
+            TweenLite.fromTo ('#fullscreen-mega-map' , 0.3, {opacity:0}, {opacity:0.95,display:'block'});
+            $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-up" style="display:inline"></i>' );         
           } else{
-            TweenMax.to('#projects_map', 0.6, {height:0});
+            TweenMax.to('#fullscreen-mega-map', 0.6, {opacity:0, display:'none'});
+            $(this).parent().css('backgroundColor', 'transparent');
             $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-down" style="display:inline"></i>' );
-          }
+          }          
+
           
       });
 

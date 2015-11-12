@@ -6,7 +6,7 @@
 // Settaggio di alcune variabili iniziali
 
 
-    //wp_reset_postdata();  
+    wp_reset_postdata();  
     setup_postdata($post);
     $categories = get_the_category();
 
