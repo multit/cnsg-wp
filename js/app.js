@@ -1,4 +1,4 @@
-'use strict';
+  'use strict';
 
 var app = (function(document, $) {
 	var docElem = document.documentElement,
@@ -32,7 +32,20 @@ var app = (function(document, $) {
 
 
 
+      $(document).foundation({
+  equalizer: {
+    equalize_on_stack: true
+    // before_height_change: function(){
+    //   // do something before the height changes
+    // },
+    // after_height_change: function(){
+    //   // do something after the height changes
+    //   console.log('Valori altezza cambiati');
+    // }  
+  }
+});
 
+      // Colora gli elementi del menu fullscreen
       $('li.fs-mega-map').each(function(index, el) {
               $(this).hover(function() {
                 /* Stuff to do when the mouse enters the element */
@@ -48,10 +61,11 @@ var app = (function(document, $) {
       // Mostra la mappa full screen del sito
       // Comandi dal link
       $('#show-mega-map').click(function(event) {
+
           event.preventDefault();
           if ($('#fullscreen-mega-map').css('display') === 'none') {
-            $('body').css('overflow', 'hidden');
-            $('#fullscreen-mega-map').css('overflow', 'auto');
+            $('body').css({overflow:'hidden'});            
+            $('#fullscreen-mega-map').css({overflow:'auto', top:0});
             TweenLite.fromTo ('#fullscreen-mega-map' , 0.8, {opacity:0}, {opacity:1,display:'block'});         
           } else{
             TweenMax.to('#fullscreen-mega-map', 0.6, {opacity:0});
@@ -64,8 +78,7 @@ var app = (function(document, $) {
             TweenLite.fromTo ($(this) , 0.2, {opacity:1}, {opacity:0,display:'none'});
             $('body').css('overflow', 'auto');
             $('li.menu-btn').each(function(index, el) {
-                $(this).css('backgroundColor', 'transparent');
-                console.log("elemento: " + $(this));
+                $(this).css({'backgroundColor':'transparent'});                
             });
           }
       });    
@@ -104,11 +117,14 @@ var app = (function(document, $) {
             $('body').css('overflow', 'hidden');
             $(this).parent().css('backgroundColor', '#EFEFE8');
             $('#fullscreen-mega-map').css('overflow', 'auto');
-            TweenLite.fromTo ('#fullscreen-mega-map' , 0.3, {opacity:0}, {opacity:0.95,display:'block'});
+            // var momY = $(window).scrollTop();
+            // console.log("Scroll top" + momY);
+            TweenLite.fromTo ('#fullscreen-mega-map' , 0.3, {opacity:0}, {opacity:0.95,display:'block', top:$(window).scrollTop()});
             $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-up" style="display:inline"></i>' );         
           } else{
             TweenMax.to('#fullscreen-mega-map', 0.6, {opacity:0, display:'none'});
             $(this).parent().css('backgroundColor', 'transparent');
+            $('body').css('overflow', 'auto');
             $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-down" style="display:inline"></i>' );
           }          
 

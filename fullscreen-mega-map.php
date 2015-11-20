@@ -15,7 +15,7 @@
 
       <!-- <p class="titolo_mega random_colored">What we do</p> -->
       <div class="fullscreen-mega-map-container">
-      <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 fullscreen-mega-map" >
+      <ul data-equalizer class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 fullscreen-mega-map">
 
       <?php
       $args = array(
@@ -31,7 +31,7 @@
               $tt = $category->taxonomy .'_' . $category->term_id;              
               $color = get_field('colore_della_categoria', $tt);
 
-              $output .= '<li class="fs-mega-map" bgc="'.$color.'" ><h3>' . $category->name . '</h3>';
+              $output .= '<li data-equalizer-watch class="fs-mega-map" bgc="'.$color.'" ><h3>' . $category->name . '</h3>';
 
               // Post o categorie questo il dilemma!!!
               // $taxonomy_name = $category->taxonomy;

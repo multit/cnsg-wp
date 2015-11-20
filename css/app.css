@@ -477,7 +477,7 @@ select {
 
 .row {
   margin: 0 auto;
-  max-width: 80rem;
+  max-width: 66.6666666667rem;
   width: 100%; }
   .row:before, .row:after {
     content: " ";
@@ -4356,7 +4356,7 @@ button:focus {
     .reveal-modal {
       left: 0;
       margin: 0 auto;
-      max-width: 80rem;
+      max-width: 66.6666666667rem;
       right: 0;
       width: 80%; } }
   @media only screen and (min-width: 42.7333333333em) {
@@ -4375,35 +4375,35 @@ button:focus {
     .reveal-modal.tiny {
       left: 0;
       margin: 0 auto;
-      max-width: 80rem;
+      max-width: 66.6666666667rem;
       right: 0;
       width: 30%; } }
   @media only screen and (min-width: 42.7333333333em) {
     .reveal-modal.small {
       left: 0;
       margin: 0 auto;
-      max-width: 80rem;
+      max-width: 66.6666666667rem;
       right: 0;
       width: 40%; } }
   @media only screen and (min-width: 42.7333333333em) {
     .reveal-modal.medium {
       left: 0;
       margin: 0 auto;
-      max-width: 80rem;
+      max-width: 66.6666666667rem;
       right: 0;
       width: 60%; } }
   @media only screen and (min-width: 42.7333333333em) {
     .reveal-modal.large {
       left: 0;
       margin: 0 auto;
-      max-width: 80rem;
+      max-width: 66.6666666667rem;
       right: 0;
       width: 70%; } }
   @media only screen and (min-width: 42.7333333333em) {
     .reveal-modal.xlarge {
       left: 0;
       margin: 0 auto;
-      max-width: 80rem;
+      max-width: 66.6666666667rem;
       right: 0;
       width: 95%; } }
   .reveal-modal.full {
@@ -4418,7 +4418,7 @@ button:focus {
       .reveal-modal.full {
         left: 0;
         margin: 0 auto;
-        max-width: 80rem;
+        max-width: 66.6666666667rem;
         right: 0;
         width: 100%; } }
   .reveal-modal.toback {
@@ -5348,7 +5348,7 @@ meta.foundation-mq-topbar {
   .contain-to-grid .top-bar {
     margin: 0 auto;
     margin-bottom: 0;
-    max-width: 80rem; }
+    max-width: 66.6666666667rem; }
   .top-bar-section {
     transition: none 0 0;
     left: 0 !important; }

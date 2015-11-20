@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
 
+
+
 <?php 
 
 // Settaggio di alcune variabili iniziali
@@ -66,6 +68,32 @@
     </div>
     <?php the_content(); ?>
 
+<?php
+
+$staff_object = get_field('staff');
+
+//print_r($staff_object);
+
+if( $staff_object ): 
+
+    // override $post
+    $post = $staff_object;
+    setup_postdata( $post ); 
+
+    ?>
+
+
+    <?php foreach( $staff_object as $post): // variable must be called $post (IMPORTANT) ?>
+        <?php setup_postdata($post); ?>
+        <li>
+            <span>Post Object Custom Field Nome: <?php echo get_the_title($post_object->ID); ?></span>
+        </li>
+    <?php endforeach; ?>
+
+
+    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+<?php endif; ?>
+
   </div>
 
 
@@ -103,12 +131,19 @@
         <?php
         $args = array( 'category' => $categoriaID   , 'post_type' => 'staff' );
         $staffMembers = get_posts( $args );
-        foreach ( $staffMembers as $post ) : setup_postdata( $post ); ?>
+        foreach ( $staffMembers as $post ) : setup_postdata( $post ); 
+                
+
+            ?>        
             <li>
                 <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'staff-mini-image' ) ); ?>
                 <a href="<?php the_permalink(); ?>"><h4 style="color:<?php echo $rl_category_color; ?>"><?php the_title(); ?></h4></a>
                 <h5><?php the_field('ruolo'); ?><br>
                 <a href="mailto:<?php the_field('email'); ?>"><b><?php the_field('email'); ?></b></a>
+                <i><?php  
+                    
+
+                ?></i>
                 </h5>
             </li>
         <?php endforeach; 
