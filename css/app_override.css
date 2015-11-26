@@ -70,7 +70,7 @@ div#projects_map {
 	height: 0px;
 	border: 0px solid #CCC;
 	position: fixed;
-	top: 67px;
+	top: 100px;
 	z-index: 51;
 	width: 100%;
 }
@@ -99,37 +99,7 @@ div.sitemap b {
 }
 
 
-/*Mappona fullscreen progetti*/
 
-div#fullscreen-mega-map{
-	background-color: #EFEFE8;
-	position: absolute;
-	top:0px;
-	left: 0px;
-	height: 100%;
-	width: 100%;
-	z-index: 102;
-	padding: 100px;
-	padding-top:100px;
-	display: none;
-	opacity: 0;	
-}
-
-
-div#fullscreen-mega-map ul li a {
-	color: #333;
-	/*margin: 0 0 10px 10px;*/
-	display: block;
-	font-size: 0.9em;
-}
-
-
-li.fs-mega-map {
-	cursor: pointer;
-	/*min-height: 350px;*/
-	/*border: 5px solid #CCCCCC;*/
-	padding: 30px;
-}
 
 /* HP News Styles */
 
@@ -198,14 +168,21 @@ section#slider {
 /*Icons Map*/
 
 div.hp-icons-map {
-	margin-bottom: 120px;
+	/*margin-bottom: 60px;*/
+}
+
+.fullscreen-map-toggler {
+	cursor: pointer;
+}
+ul.hp-icons-map {
+	padding-top: 20px;
 }
 
 ul.hp-icons-map li {
 	font-family: 'Roboto-Slab';
 	font-size: .98em;
 	line-height: 1.1em;
-	padding-top: 100px;
+	padding-top: 40px;
 	/*background: #fff url('../images/icon01.png') 50% 0 no-repeat;*/
 	background-repeat: no-repeat;
 }
@@ -244,10 +221,6 @@ ul.hp-icons-map li i.hpicons {
 
 
 /*Articolo Singolo*/
-
-section.single_article {
-	margin: 30px 0 0 0;
-}
 
 p.categoria {
 	font-family:'Montserrat-Regular';
@@ -381,9 +354,10 @@ b.attach_size {
 
 /*Footer styles*/
 
-.footer {
+div.footer-container {
 	min-height: 400px;
-	background: #D2B569 url(../images/cnsg.logo.white.png) no-repeat 50% 20px;
+	width: 100%;
+	background: #F4F4ED url(../images/cnsg.logo.white.png) no-repeat 50% 20px;
 	-webkit-background-size: 80px;
 	background-size: 100px;
 	padding: 160px 0 0 0;

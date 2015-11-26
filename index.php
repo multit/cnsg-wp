@@ -13,7 +13,7 @@ get_template_part( 'mobile', get_post_format() );
 <div class="row">
   <div class="columns small-12">
     
- <div class="columns small-12 text-center"><a href="#" id="show-mega-map"><b class="titolino random_colored" >our PROJECT full INDEX</b></a></div>
+ <div class="columns small-12 text-center"><a href="#" id="show-mega-map" class="fullscreen-map-toggler"><b class="titolino random_colored" >our PROJECT full INDEX</b></a></div>
 
 
 
@@ -22,7 +22,7 @@ get_template_part( 'mobile', get_post_format() );
 
 
 
-<div class="row show-for-medium-up">
+<div class="row">
 
 
 
@@ -78,15 +78,18 @@ get_template_part( 'mobile', get_post_format() );
                  <div class="hp-news">
                     <?php
                         $categoria = get_the_category();
-                        $the_category_id = $categoria[0]->cat_ID;
+                        // $the_category_id = $categoria[0]->cat_ID;
 
-                        if(function_exists('rl_color')){
-                            $rl_category_color = rl_color($the_category_id);
-                        }
+                        // if(function_exists('rl_color')){
+                        //     $rl_category_color = rl_color($the_category_id);
+                        // }                        
+                        $tt = $categoria[0]->taxonomy .'_' . $categoria[0]->term_id;                        
+                        $rl_category_color = get_field('colore_della_categoria', $tt);
+
                     ?>
                      <div class="hp-news-bar colore01" style="background-color:<?php echo $rl_category_color; ?>"></div>
                      <div class="hp-news-occhiello"><?php echo $categoria[0]->name; ?></div>
-                     <div class="hp-titolo-box"><a class="hp-news-titolo" href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></div>
+                     <div class="hp-titolo-box"><a class="" href="<?php the_permalink(); ?>"><h2 style="color:<?php echo $rl_category_color; ?>;"><?php echo get_the_title(); ?></h1></a></div>
                      <div class="hp-news-dateinfo closed">Maggio 2015
                         <i class="fa fa-plus info-expander" id=""></i>
                         <div class="hp-news-info" id="info-panel-17">

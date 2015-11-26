@@ -1,4 +1,4 @@
-<div class="row hp-icons-map">
+<div class="row hp-icons-map fullscreen-map-toggler">
     <div class="columns small-12 text-center">
         <!-- <p class="titolo_mega random_colored">What we do</p> -->
         <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6 hp-icons-map" >

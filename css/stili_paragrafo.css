@@ -1,3 +1,20 @@
+/*
+12 Colori set scuro
+colore:#9e8b24
+colore:#8a8444
+colore:#956f3e
+colore:#a8a200
+colore:#88101d
+colore:#ac502a
+colore:#735079
+colore:#008173
+colore:#735079
+colore:#25545d
+colore:#956f3e
+colore:#008173
+*/
+
+
 @font-face {
     font-family: 'Roboto-Slab';
     src: url("../fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
@@ -19,8 +36,12 @@ body, ul ,li  {
 }
 
 body {
-	margin: 67px 0 0 0;
+	margin: 100px 0 0 0;
 	padding: 0px;
+}
+
+body.login {
+	background-color: #F4F4ED;
 }
 
 .paragrafo-stretto {
@@ -28,8 +49,8 @@ body {
 	line-height: 0.8em;
 }
 
-.articolo  {
-	padding: 0 0 50px 0;
+section  {
+	padding: 100px 0 50px 0;
 }
 
 h1 {
@@ -39,9 +60,12 @@ h1 {
 	letter-spacing: -0.02em;
 }
 h2 {
-	font-family: 'Roboto-Slab';
+/*	font-family: 'Roboto-Slab';
 	font-size: 1.3em;
-	line-height: 1.1em;
+	line-height: 1.1em;*/
+	font-family: 'Montserrat-bold';
+    font-size: 1.2em;
+    line-height: 1.1em;
 }
 
 h3 {

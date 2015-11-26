@@ -1,9 +1,14 @@
 <?php get_header(); ?>
 
 
-<?php setup_postdata($post); ?>
+<?php setup_postdata($post); 
 
-<section id="single-article" class="single_article">
+
+
+
+
+?>
+
 
   <article>
     <div class="row">
@@ -30,19 +35,20 @@
 
         <div class="first-row-padded"></div>       
         <div class="right-column">
-            <h2 class="">Projects</h2><br >
+            <h2 style="color:#AC9865" class="">Projects</h2><br >
+              
+
               <?php 
-              $categorie = get_the_category( );               
-              foreach ($categorie as $categoria) {
-                $args=array(
-                  'category'       =>  $categoria->term_id,
-                  'post_type'      => 'progetto',
-                  'post_status'    => 'publish',
-                );
-                $progetti = get_posts( $args );                
-                  $proj .= '<a href="'. esc_url( get_permalink( $progetti[0]->ID ) ) .'"><h4>' . $progetti[0]->post_title . '</h4></a>';
-              }
-              echo $proj; ?>
+              $progetti = wp_get_object_terms( $post->ID, 'progetto' );
+              foreach ( $progetti as $progetto ) : ?>        
+                      <a href="<?php echo esc_url( get_term_link( $progetto->term_id, 'progetto' )) ?>">
+                        <h4 style="color:<?php echo $rl_category_color; ?>">
+                          <?php echo $progetto->name ?></h4>
+                        </a>
+              <?php endforeach; ?>
+
+
+            
             </p>            
         </div>
         </div>
@@ -55,7 +61,6 @@
     </div>
    
   </article>
-</section>
 
 
 <?php get_footer(); ?>

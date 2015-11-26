@@ -86,11 +86,11 @@
     
             <div class="columns medium-8 show-for-medium-up">
                 <ul class="inline-list">
-                    <li class="menu-btn"><a href=""><h3>Mission</h3></a></li>
-                    <li class="menu-btn"><a href=""><h3>Staff</h3></a></li>
-                    <li class="menu-btn"><a href="#" id="menutop_projects"><h3>Projects&nbsp;<i id="menuarrow"class="fa fa-chevron-down" style="display:inline"></i></h3></a></li>
-                    <li class="menu-btn"><a href=""><h3>News</h3></a></li>
-                    <li class="menu-btn"><a href=""><h3>Search</h3></a></li>
+                    <li class="menu-btn"><a href="" class="menuAnimated"><h3>Mission</h3></a></li>
+                    <li class="menu-btn"><a href="" class="menuAnimated"><h3>Staff</h3></a></li>
+                    <li class="menu-btn"><a href="#" id="menutop_projects" class="fullscreen-map-toggler menuAnimated"><h3>Projects&nbsp;<i id="menuarrow"class="fa fa-chevron-down" style="display:inline"></i></h3></a></li>
+                    <li class="menu-btn"><a href="" class="menuAnimated"><h3>News</h3></a></li>
+                    <li class="menu-btn"><a href="" class="menuAnimated"><h3>Search</h3></a></li>
                 </ul>
             </div>
     
@@ -127,6 +127,8 @@
 
         <!-- logo per big screens -->
         <div class="row show-for-large-up"><a href="<?php bloginfo('url'); ?>">
+            
+            <div id="iss-logo" class="<?php (is_home())  ? print 'animated' :'' ?>"></div>
             <div class="columns small-12 logo logo_large <?php (is_home())  ? print 'animated' :'' ?>"  id="logo-animato">
                 <p class="logo_en">Italian Center For <b>Global Health</b></p>
                 <p class="logo_ita">Centro Nazionale <b>per la Salute Globale</b></p>                

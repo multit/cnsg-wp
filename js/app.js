@@ -58,31 +58,8 @@ var app = (function(document, $) {
       });
 
 
-      // Mostra la mappa full screen del sito
-      // Comandi dal link
-      $('#show-mega-map').click(function(event) {
-
-          event.preventDefault();
-          if ($('#fullscreen-mega-map').css('display') === 'none') {
-            $('body').css({overflow:'hidden'});            
-            $('#fullscreen-mega-map').css({overflow:'auto', top:0});
-            TweenLite.fromTo ('#fullscreen-mega-map' , 0.8, {opacity:0}, {opacity:1,display:'block'});         
-          } else{
-            TweenMax.to('#fullscreen-mega-map', 0.6, {opacity:0});
-          }
-      });      
-      // Chiude la mappa
-      $('#fullscreen-mega-map').click(function(event) {        
-          //event.preventDefault();
-          if ($(this).css('display') === 'block') {                
-            TweenLite.fromTo ($(this) , 0.2, {opacity:1}, {opacity:0,display:'none'});
-            $('body').css('overflow', 'auto');
-            $('li.menu-btn').each(function(index, el) {
-                $(this).css({'backgroundColor':'transparent'});                
-            });
-          }
-      });    
-
+  
+ 
 
       // Colora titolini in maniera random
       $( '.random_colored' ).each(function( index ) {            
@@ -102,43 +79,59 @@ var app = (function(document, $) {
       });
 
 
-      // Apre il menu superiore con la mappa dei progeti
-      $('#menutop_projects').click(function(event) {
-          // if ($('#projects_map').css('height') === '0px') {
-          //   TweenMax.set('#projects_map',{height:'auto'});
-          //   TweenMax.from('#projects_map',0.5,{height:0,ease:Quad.easeOut});
-          //   $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-up" style="display:inline"></i>' );
-          // } else{
-          //   TweenMax.to('#projects_map', 0.6, {height:0});
-          //   $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-down" style="display:inline"></i>' );
-          // }
-          event.preventDefault();
-          if ($('#fullscreen-mega-map').css('display') === 'none') {
-            $('body').css('overflow', 'hidden');
-            $(this).parent().css('backgroundColor', '#EFEFE8');
-            $('#fullscreen-mega-map').css('overflow', 'auto');
-            // var momY = $(window).scrollTop();
-            // console.log("Scroll top" + momY);
-            TweenLite.fromTo ('#fullscreen-mega-map' , 0.3, {opacity:0}, {opacity:0.95,display:'block', top:$(window).scrollTop()});
-            $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-up" style="display:inline"></i>' );         
-          } else{
-            TweenMax.to('#fullscreen-mega-map', 0.6, {opacity:0, display:'none'});
-            $(this).parent().css('backgroundColor', 'transparent');
-            $('body').css('overflow', 'auto');
-            $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-down" style="display:inline"></i>' );
-          }          
-
-          
+      $('.menuAnimated').click(function(event) {
+        var tl = new TimelineLite();
+        tl.to($(this), 0.1, {'margin-top':10}).to($(this), 0.3, {'margin-top':0});
       });
 
 
 
-      // $(function() {
-      //     $.scrollify({
-      //       section : 'section',
-      //      // offset:-280
-      //     });
-      //   });
+
+      // Mostra la mappa full screen del sito
+
+      $('.fullscreen-map-toggler').click(function(event) {
+          event.preventDefault();          
+          toggleFullscreenMap();                
+      });      
+
+      function toggleFullscreenMap() {
+        
+        // Se non è visibile
+          if ($('#fullscreen-mega-map').css('display') === 'none') {
+            $('body').css('overflow', 'hidden');
+            $(this).parent().css('backgroundColor', '#EFEFE8');
+            $('#fullscreen-mega-map').css('overflow', 'auto');
+            TweenLite.fromTo ('#fullscreen-mega-map' , 0.3, {opacity:0}, {opacity:1,display:'block', top:$(window).scrollTop()});
+            $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-up" style="display:inline"></i>' );         
+          } 
+          // Se invece è il menu è aperto
+          else{
+            TweenMax.to('#fullscreen-mega-map', 0.6, {opacity:0, display:'none'});
+            $(this).parent().css('backgroundColor', 'transparent');
+            $('body').css('overflow', 'auto');
+            $( 'i#menuarrow' ).replaceWith( '<i id="menuarrow" class="fa fa-chevron-down" style="display:inline"></i>' );
+          }    
+
+      };
+
+      // Chiude la mappa fullscreen cliccandoci sopra ma i link continuano a funzionare
+      $('#fullscreen-mega-map').click(function(event) {        
+          //event.preventDefault();
+          toggleFullscreenMap();
+         
+      });   
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   },   // end init function
@@ -154,13 +147,17 @@ var app = (function(document, $) {
               'pt' : parseInt( $('#logo-animato').css('padding-top') , 10),
               'mt' : parseInt( $('#logo-animato').css('margin-top') , 10),
               'bm' : parseInt( $('#logo-spacer.animated').css('height') , 10),
+              'issW' : parseInt( $('#iss-logo').css('width') , 10),
+              'issH' : parseInt( $('#iss-logo').css('height') , 10)
             };
 
             var beginVal = {
               'hb' : 160,  // Dimensione iniziale logo
               'pt' : 180,
               'mt' : 40,
-              'bm' : 310  // Altezza del logo-spacer.animated
+              'bm' : 310,  // Altezza del logo-spacer.animated
+              'issW' : 61,
+              'issH' : 61
             };      
             
             // Imposta lo stato iniziale
@@ -172,6 +169,10 @@ var app = (function(document, $) {
                       paddingTop: beginVal.pt,
                       marginTop: beginVal.mt,
                       backgroundSize: beginVal.hb
+               });
+              $('#iss-logo.animated').css({
+                      width: beginVal.issW,
+                      height: beginVal.issH                      
                });
               
             }
@@ -194,10 +195,13 @@ var app = (function(document, $) {
                   
                  },
                  onLeave: function(element, position) {   
-                    console.log('leave');
                     //TweenMax.to('div.logo_large.animated',0.8,{ 'padding-top':endVal['pt'], 'background-size':endVal['hb'], 'margin-top':endVal['mt']  });
                     $('div.logo_large.animated').css({ 'padding-top':endVal.pt, 'background-size':endVal.hb, 'margin-top':endVal.mt });
                     $('#logo-spacer.animated').css({'height': endVal.bm});
+                    $('#iss-logo.animated').css({
+                      width: endVal.issW,
+                      height: endVal.issW
+                    });
                  },
                  onTick: function(element, position) {
 
@@ -208,9 +212,12 @@ var app = (function(document, $) {
                     var mtdiff_abs =  beginVal.mt - calcola_percent( beginVal.mt,endVal.mt,perc ).toFixed(0);
                     var bmdiff_abs =  beginVal.bm - calcola_percent( beginVal.bm,endVal.bm,perc ).toFixed(0);
 
-
                     TweenMax.to('div.logo_large.animated',0.4,{ 'padding-top':ptdiff_abs, 'background-size':bgdiff_abs, 'margin-top':mtdiff_abs });
                     TweenMax.to('#logo-spacer.animated',0.8,{'height': bmdiff_abs });
+
+                    var issWdiff_abs =  beginVal.issW - calcola_percent( beginVal.issW,endVal.issW,perc ).toFixed(0);
+                    var issHdiff_abs =  beginVal.issH - calcola_percent( beginVal.issH,endVal.issH,perc ).toFixed(0);
+                    TweenMax.to('#iss-logo.animated',0.8,{'width': issWdiff_abs, 'height':issHdiff_abs });
 
 
                  }
