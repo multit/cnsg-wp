@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/flaticon.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app_override.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/stili_paragrafo.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/stili_paragrafo.css">    
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/logo.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/navigazione-top.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/small_screens.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/mobile.css">
+    
     
     <script src="<?php bloginfo('template_directory'); ?>/js/vendor/modernizr.min.js"></script>
 
@@ -22,9 +23,6 @@
 
   </head>
   <body>
-
-
-
 
 
 <header class="show-for-medium-up">
@@ -36,7 +34,6 @@
     <?php get_template_part( 'fullscreen-mega-map', get_post_format() );   ?>
 
     </div></div>
-
 <!-- End Site mega map -->
     
     
@@ -132,7 +129,7 @@
             <div class="columns small-12 logo logo_large <?php (is_home())  ? print 'animated' :'' ?>"  id="logo-animato">
                 <p class="logo_en">Italian Center For <b>Global Health</b></p>
                 <p class="logo_ita">Centro Nazionale <b>per la Salute Globale</b></p>                
-                <p class="logo_payoff">fightin health inequalities</p>
+                <p class="logo_payoff">Research and Action to Fight Health Inequalities Worldwide</p>
             </div>
         </a></div>
         <!-- end logo -->
@@ -155,14 +152,14 @@
                 <p>
                     Italian Center For <b>Global Health</b>
                 </p>
-                <p class="logo_payoff">fightin health inequalities medium</p>
+                <p class="logo_payoff">Research and Action to Fight Health Inequalities Worldwide</p>
             </div>
             
             <div class="columns show-for-small-only text-center logo logo_small">
                 <p>
                     Italian Center For <br><b>Global Health</b>
                 </p>
-                <p class="logo_payoff">fightin health inequalities</p>               
+                <p class="logo_payoff">Research and Action to Fight Health Inequalities Worldwide</p>               
             </div>
 
         

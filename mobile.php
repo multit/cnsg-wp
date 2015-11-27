@@ -64,7 +64,7 @@
                 <p>
                     Italian Center For<br><b>Global Health</b>
                 </p>
-                <p class="logo_payoff">fightin health inequalities medium</p>
+                <p class="logo_payoff">fightin health inequalities worldwide</p>
             </div>
           </a>
         </div>
