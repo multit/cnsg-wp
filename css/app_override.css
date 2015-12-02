@@ -1,3 +1,126 @@
+/* banner 3
+ ######  ######## #### ##       ####    ########     ###    ########     ###     ######   ########     ###    ########  #######  
+##    ##    ##     ##  ##        ##     ##     ##   ## ##   ##     ##   ## ##   ##    ##  ##     ##   ## ##   ##       ##     ## 
+##          ##     ##  ##        ##     ##     ##  ##   ##  ##     ##  ##   ##  ##        ##     ##  ##   ##  ##       ##     ## 
+ ######     ##     ##  ##        ##     ########  ##     ## ########  ##     ## ##   #### ########  ##     ## ######   ##     ## 
+      ##    ##     ##  ##        ##     ##        ######### ##   ##   ######### ##    ##  ##   ##   ######### ##       ##     ## 
+##    ##    ##     ##  ##        ##     ##        ##     ## ##    ##  ##     ## ##    ##  ##    ##  ##     ## ##       ##     ## 
+ ######     ##    #### ######## ####    ##        ##     ## ##     ## ##     ##  ######   ##     ## ##     ## ##        #######  
+*/
+
+
+
+/*
+12 Colori set scuro
+colore:#9e8b24
+colore:#8a8444
+colore:#956f3e
+colore:#a8a200
+colore:#88101d
+colore:#ac502a
+colore:#735079
+colore:#008173
+colore:#735079
+colore:#25545d
+colore:#956f3e
+colore:#008173
+*/
+
+
+@font-face {
+    font-family: 'Roboto-Slab';
+    src: url("../fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Roboto-Slab-light';
+    src: url("../fonts/roboto-slab/RobotoSlab-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Montserrat-regular';
+    src: url("../fonts/montserrat/Montserrat-Regular.otf") format('opentype');
+}
+
+body, ul ,li  {
+	font-family: 'Roboto-Slab-light';
+	font-size: 15px;
+	line-height: 20px;
+}
+
+body {
+	margin: 100px 0 0 0;
+	padding: 0px;
+}
+
+body.login {
+	background-color: #F4F4ED;
+}
+
+.paragrafo-stretto {
+	font-size: 0.8em;
+	line-height: 0.8em;
+}
+
+section  {
+	padding: 100px 0 50px 0;
+}
+
+h1 {
+	font-family: 'Roboto-Slab';
+	font-size: 2.5em;
+	line-height: 1.1em;
+	letter-spacing: -0.02em;
+}
+h2 {
+/*	font-family: 'Roboto-Slab';
+	font-size: 1.3em;
+	line-height: 1.1em;*/
+	font-family: 'Montserrat-bold';
+    font-size: 1.2em;
+    line-height: 1.1em;
+}
+
+h3 {
+	font-family: 'Montserrat-regular';
+	text-transform: uppercase;
+	font-size: 0.8em;
+	letter-spacing: 0.1em;
+}
+h4 {
+	font-family: 'Roboto-Slab';
+	font-size: 1.1em;
+	line-height: 1.1em;
+	letter-spacing: -0.02em;
+}
+
+h5 {
+	font-family: 'Roboto-Slab';
+	font-size: 0.9em;
+	line-height: 1.2em;
+}
+
+h6 {
+	font-family: 'Roboto-Slab';
+	font-size: 0.8em;
+	line-height: 1em;
+}
+
+
+
+
+
+
+
+/*
+ ######   ######## ##    ## ######## ########     ###    ##       #### 
+##    ##  ##       ###   ## ##       ##     ##   ## ##   ##        ##  
+##        ##       ####  ## ##       ##     ##  ##   ##  ##        ##  
+##   #### ######   ## ## ## ######   ########  ##     ## ##        ##  
+##    ##  ##       ##  #### ##       ##   ##   ######### ##        ##  
+##    ##  ##       ##   ### ##       ##    ##  ##     ## ##        ##  
+ ######   ######## ##    ## ######## ##     ## ##     ## ######## #### 
+*/
+
 .columns {
 	border: 0px solid #CCC;
 }
@@ -25,8 +148,9 @@ ul {
 	font-size: 1.2em;
 	letter-spacing: 0.05em;
 }
-b.titolino {
+.titolino b {
 	font-family: 'Montserrat-regular';
+	font-size: 1em;
 }
 
 .sidecolumn {
@@ -59,8 +183,111 @@ b.titolino {
 
 
 
+/*
+##        #######   ######    #######  
+##       ##     ## ##    ##  ##     ## 
+##       ##     ## ##        ##     ## 
+##       ##     ## ##   #### ##     ## 
+##       ##     ## ##    ##  ##     ## 
+##       ##     ## ##    ##  ##     ## 
+########  #######   ######    #######  
+*/
 
-/*Mappa progetti popup*/
+
+.logo {	
+	background: url('../images/logo40.exec01.svg') 50% 0% no-repeat;
+	background-size: 80px;
+}
+#logo-spacer {
+	height: 200px;
+}
+.logo p {
+	font-family: 'Montserrat-Regular';
+	text-transform: uppercase;	
+	color: #AC9865;
+	letter-spacing: 0.2em;
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+}
+p.logo_payoff {
+	font-family: 'Georgia';
+	font-style: italic;
+	font-size: 0.9em;
+	letter-spacing: 0.2em;
+	text-transform: capitalize;	
+	color: #666;
+	text-align: center;
+	background: transparent url('../images/logo-shadow.png') 50% 100% no-repeat;
+	height: 80px;
+	clear: both;
+	float: none;
+	padding: 20px 0 0 0;
+}
+.logo b {
+	font-family: 'Montserrat-regular';
+	color: #732706;
+	font-weight: 700;
+}
+p.logo_ita {
+	letter-spacing:0.1em;
+	float: left;
+	text-align: right; 
+	width: 50%;
+	border:0px solid #ccc;
+	padding-right: 50px;
+}
+p.logo_en {
+	float: right;
+	text-align: left; 
+	width: 50%;
+	border:0px solid #ccc;
+	padding-left: 50px;
+}
+.logo_large {
+	background-size: 80px;
+	padding: 35px 0 0 0;
+	margin: 20px auto 0 auto;
+	position: relative;
+	z-index: 0;
+}
+.logo_large p.logo_payoff {
+	padding-top: 50px;
+	height: 110px;
+	}
+
+.logo_medium {
+	background-size: 140px;
+	padding: 180px 0 0 0;
+	margin:50px 0 0 0;
+	
+}
+.logo_small {
+	background-size: 160px;
+	padding-top: 250px;
+	margin:65px 0 0 0;
+}
+div#iss-logo {
+	position: absolute;
+	z-index: 200;
+	top: 86px;
+	background: transparent url('../images/iss-logo-small.svg') no-repeat ;
+	width: 50px;	
+	height: 50px;	;
+	margin: 0 0 0 -10px;
+	-webkit-background-size: contain;
+	background-size: contain;
+}
+
+/*
+##     ##    ###    ########  ########     ###       ########   #######  ########  ##     ## ########  
+###   ###   ## ##   ##     ## ##     ##   ## ##      ##     ## ##     ## ##     ## ##     ## ##     ## 
+#### ####  ##   ##  ##     ## ##     ##  ##   ##     ##     ## ##     ## ##     ## ##     ## ##     ## 
+## ### ## ##     ## ########  ########  ##     ##    ########  ##     ## ########  ##     ## ########  
+##     ## ######### ##        ##        #########    ##        ##     ## ##        ##     ## ##        
+##     ## ##     ## ##        ##        ##     ##    ##        ##     ## ##        ##     ## ##        
+##     ## ##     ## ##        ##        ##     ##    ##         #######  ##         #######  ##        
+*/
 
 
 div#projects_map {
@@ -101,7 +328,15 @@ div.sitemap b {
 
 
 
-/* HP News Styles */
+/* 
+##    ## ######## ##      ##  ######  
+###   ## ##       ##  ##  ## ##    ## 
+####  ## ##       ##  ##  ## ##       
+## ## ## ######   ##  ##  ##  ######  
+##  #### ##       ##  ##  ##       ## 
+##   ### ##       ##  ##  ## ##    ## 
+##    ## ########  ###  ###   ######  
+*/
 
 .hp-news {
 	font-family: 'Roboto-Slab-light';
@@ -156,16 +391,18 @@ div.sitemap b {
 	overflow: hidden;
 }
 
-/*Slider*/
-
-section#slider {
-	height: 400px;
-	overflow: hidden;
-	margin-bottom: 20px;
-}
 
 
-/*Icons Map*/
+
+/*
+##     ##    ###    ########  ########     ###       ####  ######   #######  ##    ## ######## 
+###   ###   ## ##   ##     ## ##     ##   ## ##       ##  ##    ## ##     ## ###   ## ##       
+#### ####  ##   ##  ##     ## ##     ##  ##   ##      ##  ##       ##     ## ####  ## ##       
+## ### ## ##     ## ########  ########  ##     ##     ##  ##       ##     ## ## ## ## ######   
+##     ## ######### ##        ##        #########     ##  ##       ##     ## ##  #### ##       
+##     ## ##     ## ##        ##        ##     ##     ##  ##    ## ##     ## ##   ### ##       
+##     ## ##     ## ##        ##        ##     ##    ####  ######   #######  ##    ## ######## 
+*/
 
 div.hp-icons-map {
 	/*margin-bottom: 60px;*/
@@ -220,7 +457,14 @@ ul.hp-icons-map li i.hpicons {
 
 
 
-/*Articolo Singolo*/
+/*
+   ###    ########  ######## ####  ######   #######  ##        #######      ######  #### ##    ##  ######    #######  ##        #######  
+  ## ##   ##     ##    ##     ##  ##    ## ##     ## ##       ##     ##    ##    ##  ##  ###   ## ##    ##  ##     ## ##       ##     ## 
+ ##   ##  ##     ##    ##     ##  ##       ##     ## ##       ##     ##    ##        ##  ####  ## ##        ##     ## ##       ##     ## 
+##     ## ########     ##     ##  ##       ##     ## ##       ##     ##     ######   ##  ## ## ## ##   #### ##     ## ##       ##     ## 
+######### ##   ##      ##     ##  ##       ##     ## ##       ##     ##          ##  ##  ##  #### ##    ##  ##     ## ##       ##     ## 
+##     ## ##    ##     ##     ##  ##    ## ##     ## ##       ##     ##    ##    ##  ##  ##   ### ##    ##  ##     ## ##       ##     ## 
+##     ## ##     ##    ##    ####  ######   #######  ########  #######      ######  #### ##    ##  ######    #######  ########  #######  */
 
 p.categoria {
 	font-family:'Montserrat-Regular';
@@ -262,7 +506,15 @@ img.single-article-featured {
 
 
 
-/*Pagine di progetto */
+/*
+########     ###     ######   #### ##    ##    ###       ########  ########   #######   ######   ######## ######## ########  #######  
+##     ##   ## ##   ##    ##   ##  ###   ##   ## ##      ##     ## ##     ## ##     ## ##    ##  ##          ##       ##    ##     ## 
+##     ##  ##   ##  ##         ##  ####  ##  ##   ##     ##     ## ##     ## ##     ## ##        ##          ##       ##    ##     ## 
+########  ##     ## ##   ####  ##  ## ## ## ##     ##    ########  ########  ##     ## ##   #### ######      ##       ##    ##     ## 
+##        ######### ##    ##   ##  ##  #### #########    ##        ##   ##   ##     ## ##    ##  ##          ##       ##    ##     ## 
+##        ##     ## ##    ##   ##  ##   ### ##     ##    ##        ##    ##  ##     ## ##    ##  ##          ##       ##    ##     ## 
+##        ##     ##  ######   #### ##    ## ##     ##    ##        ##     ##  #######   ######   ########    ##       ##     #######  
+*/
 
 article {
 	min-height: 800px;
@@ -352,7 +604,15 @@ b.attach_size {
 	min-height: 200px;
 }
 
-/*Footer styles*/
+/*
+########  #######   #######  ######## ######## ########  
+##       ##     ## ##     ##    ##    ##       ##     ## 
+##       ##     ## ##     ##    ##    ##       ##     ## 
+######   ##     ## ##     ##    ##    ######   ########  
+##       ##     ## ##     ##    ##    ##       ##   ##   
+##       ##     ## ##     ##    ##    ##       ##    ##  
+##        #######   #######     ##    ######## ##     ## 
+*/
 
 div.footer-container {
 	min-height: 400px;
@@ -365,3 +625,233 @@ div.footer-container {
 	color: #333;
 	text-align: center;
 }
+
+/*
+ ######  ##       #### ########  ######## ########  
+##    ## ##        ##  ##     ## ##       ##     ## 
+##       ##        ##  ##     ## ##       ##     ## 
+ ######  ##        ##  ##     ## ######   ########  
+      ## ##        ##  ##     ## ##       ##   ##   
+##    ## ##        ##  ##     ## ##       ##    ##  
+ ######  ######## #### ########  ######## ##     ## 
+*/
+.flexslider .slides>li {
+	overflow: hidden;
+}
+
+ul.slides { 
+	display: block;
+	overflow: hidden;
+	border: 10px solid #000;
+}	
+
+
+/*
+ ######  ########  ######  ######## ####  #######  ##    ##  ######  
+##    ## ##       ##    ##    ##     ##  ##     ## ###   ## ##    ## 
+##       ##       ##          ##     ##  ##     ## ####  ## ##       
+ ######  ######   ##          ##     ##  ##     ## ## ## ##  ######  
+      ## ##       ##          ##     ##  ##     ## ##  ####       ## 
+##    ## ##       ##    ##    ##     ##  ##     ## ##   ### ##    ## 
+ ######  ########  ######     ##    ####  #######  ##    ##  ######  
+*/
+
+div.section-title {
+	/*display: block;*/
+	/*width: 100%;*/
+	/*background-color: #FF0000;*/
+	/*background-color: #ccc;*/
+	margin: 20px 0 50px 0;
+	text-align: center;
+	position: relative;	
+}
+div.section-title b {
+	font-weight: 700;
+	}
+div.section-title:before {
+	content:"";
+    position: absolute;
+    top: 50%;    
+    left: 0;    
+    border-top:1px solid #CCC;
+    width: 40%;
+    z-index: 1;
+}
+div.section-title:after {
+	content:"";
+    position: absolute;
+    top: 50%;    
+    left: 60%;    
+    border-top:1px solid #CCC;
+    width: 40%;
+    z-index: 2;
+}
+
+
+/*
+##    ##    ###    ##     ## ####  ######      ###    ######## ####  #######  ##    ## ########    ########  #######  ########  
+###   ##   ## ##   ##     ##  ##  ##    ##    ## ##        ##   ##  ##     ## ###   ## ##             ##    ##     ## ##     ## 
+####  ##  ##   ##  ##     ##  ##  ##         ##   ##      ##    ##  ##     ## ####  ## ##             ##    ##     ## ##     ## 
+## ## ## ##     ## ##     ##  ##  ##   #### ##     ##    ##     ##  ##     ## ## ## ## ######         ##    ##     ## ########  
+##  #### #########  ##   ##   ##  ##    ##  #########   ##      ##  ##     ## ##  #### ##             ##    ##     ## ##        
+##   ### ##     ##   ## ##    ##  ##    ##  ##     ##  ##       ##  ##     ## ##   ### ##             ##    ##     ## ##        
+##    ## ##     ##    ###    ####  ######   ##     ## ######## ####  #######  ##    ## ########       ##     #######  ##        
+
+*/
+
+nav.menutop {	
+	position: fixed;
+	z-index: 50;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #FFFFFF;
+}
+
+div.menutop-box  {
+	background-color: #F4F4ED;
+	height: 67px;
+	width: 100%;
+	padding:0 10px 0 10px;
+	margin: 0px;
+	overflow: hidden;
+}
+
+div.menutop ul {
+	position: relative;
+}
+div.menutop ul li {
+	height: 67px;
+	padding: 20px 20px 10px 20px;
+	margin: 0px;
+}
+div.menutop ul li:first-child {
+	padding-left: 0px; 
+}
+div.menutop ul#scelta_lingua li:last-child:before {
+	content: "";
+    position: absolute;
+    top: 30%;
+    bottom: 30%;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 150px;
+}
+ul#social {
+	margin: 0 180px 0 0;
+	overflow: visible;
+}
+ul#social li {
+	color: #6F6F6E;
+	margin: -6px -30px 0 0;
+}
+ul#social li h3 {
+	color: #6F6F6E;
+}
+
+
+/*Mappona fullscreen progetti*/
+
+div#fullscreen-mega-map{
+	background-color: #EFEFE8;
+	position: absolute;
+	top:0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 102;
+	padding: 50px 0 200px 0;
+	display: none;
+	opacity: 0;
+	margin-top: -33px;	
+}
+.logo-fullscreen-map {
+	padding: 35px 0 80px 0;
+}
+
+ul#menu-menu-progetti ul {
+	/* style */
+	border: 0px solid #FFF;
+	margin: 0px;
+	padding: 10px 0 10px 0;
+}
+
+ul#menu-menu-progetti li, ul.sub-menu li {
+	margin: 0px;
+	
+	cursor: pointer;
+	display: block;
+}
+/*Titolo dell area */
+li.menu-item-object-progetto a {
+	font-family: 'Montserrat-bold';
+	font-size: 18px;
+	line-height: 20px;
+	margin: 0 0 0 0;	
+}
+/*Titolo di secondo livello*/
+ul.sub-menu li.menu-item-object-progetto a {
+	font-family: 'Roboto-Slab';
+	font-size: 15px;
+}
+
+/*
+##     ##  #######  ########  #### ##       ######## 
+###   ### ##     ## ##     ##  ##  ##       ##       
+#### #### ##     ## ##     ##  ##  ##       ##       
+## ### ## ##     ## ########   ##  ##       ######   
+##     ## ##     ## ##     ##  ##  ##       ##       
+##     ## ##     ## ##     ##  ##  ##       ##       
+##     ##  #######  ########  #### ######## ######## 
+*/
+.m-menutop  {
+	height: 67px;
+	width: 100%;
+	padding:20px 0 0 0;	
+}
+
+.inner-wrap {
+	height: 100%;
+	padding: 10px;	
+}
+.off-canvas-wrap {
+	margin: -67px 0 0 0;
+	height: 100%;	
+}
+.inner-wrap:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 100%;
+	z-index: -1;
+	background-color: #F4F4ED;
+}
+aside.left-off-canvas-menu {
+	padding-top: 120px;
+	background: #333333 url('../images/cnsg.logo.white.png') no-repeat 50% 40px;
+	background-size: 40px;
+}
+ul.left-menu-mobile li a h3, ul.left-submenu li a h3 {
+	color: #fff;
+	display: inline;
+	font-size: 0.7em;
+}
+
+.left-submenu {
+	height: 100%
+}
+
+ul.off-canvas-list li a {
+	padding: 5px 18px 8px 18px;
+}
+
+.left-off-canvas-menu ul.off-canvas-list li.has-submenu > a:after {    
+    content: '';
+}
+li.has-submenu i {
+	padding: 0 0 0 10px;
+	font-size: 0.6em;
+}
+

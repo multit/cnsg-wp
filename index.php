@@ -10,20 +10,24 @@ get_template_part( 'mobile', get_post_format() );
 
 
 
-<div class="row">
-  <div class="columns small-12">
+
+
+<section id="hp-slider">
+  <div class="row">
     
- <div class="columns small-12 text-center"><a href="#" id="show-mega-map" class="fullscreen-map-toggler"><b class="titolino random_colored" >our PROJECT full INDEX</b></a></div>
-
-
-
+                    <div class="flexslider">
+                  <ul class="slides">
+                      <li><img src="<?php bloginfo(template_directory ); ?>/images/slide01.jpg" alt=""></li>
+                      <li><img src="<?php bloginfo(template_directory ); ?>/images/slide04.jpg" alt=""></li>
+                  </ul>  
+                  </div>
   </div>
-</div>
+</section>
 
 
 
-<div class="row">
 
+  
 
 
      
@@ -33,56 +37,16 @@ get_template_part( 'mobile', get_post_format() );
 
 
 <section id="news">
-
-    <div class="row  show-for-medium-up">
-        <div class="columns large-10">
-
-
-            <div class="row"><div class="columns">
-              <p class="titolino">NEWS</p>
-            </div></div>
-
-            <div class="row"><div class="columns large10">
-
-                <!-- <div class="columns large-12"> -->
-                <div class="flexslider">
-                  <ul class="slides">
-                      <li><img src="<?php bloginfo(template_directory ); ?>/images/slide01.jpg" alt=""></li>
-                      <li><img src="<?php bloginfo(template_directory ); ?>/images/slide04.jpg" alt=""></li>
-                  </ul>  
-                  </div>
-                <!-- </div> -->
-            </div></div>
-
-
-
-            
-<!-- for masonry  js-masonry"  data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": 200 }' -->     
 <div class="row">
 
-    <div id="hp-news-container" class="js-masonry" data-masonry-options='{ "itemSelector": ".item"}'> 
+    <div id="hp-news-container" class="grid js-masonry" data-masonry-options='{ "itemSelector": ".item"}'> 
 
-            <?php 
-
-            // $query = new WP_Query();
-            // if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); 
-
-              if ( have_posts() ) : while ( have_posts() ) : the_post();
-
-
-            ?>
+    <?php  if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
               
-
-
-             <div class="columns medium-6 large-4 item">
+             <div class="item columns small-12 medium-4 large-3">
                  <div class="hp-news">
                     <?php
-                        $categoria = get_the_category();
-                        // $the_category_id = $categoria[0]->cat_ID;
-
-                        // if(function_exists('rl_color')){
-                        //     $rl_category_color = rl_color($the_category_id);
-                        // }                        
+                        $categoria = get_the_category();                      
                         $tt = $categoria[0]->taxonomy .'_' . $categoria[0]->term_id;                        
                         $rl_category_color = get_field('colore_della_categoria', $tt);
 
@@ -99,41 +63,49 @@ get_template_part( 'mobile', get_post_format() );
                      </div>
                      <div class="hp-news-testo"><?php echo get_the_content('continua'); ?></div>
                  </div>
-             </div>
+             </div>  <!-- End div Item -->
 
             <?php endwhile; ?>
 
 
-        <?php else : ?>
-
-                    Nessun Articolo presente.
-
-
-        <?php endif; ?>
+      <?php else : ?>
+                  Nessuna news presente.
+      <?php endif; ?>
 
     </div>
-</div>  <!-- end contenuto news -->
-<!-- end for masonry news-->
+</div> <!-- end for masonry news-->
 
-
-
-
-        </div>
-        <div class="columns large-2 show-for-large-up">
-        <p class="titolino">Fast <b>Facts</b></p>
-          <?php //killer_charts_tag (1,3);  ?>
-
-
-        </div>
-    </div>
-
-      
-    
-
-
+</div>
 </section> <!-- End News Section -->
 
+
+
+
+
+
+<section id="charts">
+  <div class="row">
+    <div class="section-title titolino"><span class="random_colored">Fast </span><b class="random_colored">Facts</b></div>      
     
+    <div class="columns show-for-medium-up">
+    <?php 
+      // Parametri num colonne, munero dei grafici
+      // Attenzione che se il canvas è a visibility=0 da' errore provare con foundation6?
+      killer_charts_tag (3,3); ?>
+    </div>
+
+    <div class="columns show-for-medium-only">
+    <?php  //killer_charts_tag (3,3); ?>
+    </div>
+
+
+
+  </div>
+</section>
+    
+
+
+
 
 
 <?php get_footer(); ?>

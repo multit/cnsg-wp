@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/libraries.min.css">    
 <!--     <link rel="stylesheet" href="<?php //bloginfo('template_directory'); ?>/css/app.min.css">
  -->
+    
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/flaticon.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app_override.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/stili_paragrafo.css">    
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/logo.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/navigazione-top.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/small_screens.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/mobile.css">
+
+
+    
     
     
     <script src="<?php bloginfo('template_directory'); ?>/js/vendor/modernizr.min.js"></script>

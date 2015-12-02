@@ -96,17 +96,39 @@ removed: function(){}           //{NEW} Callback: function(slider) - Fires after
 */
 
 
-$('ul.slides li').css('opacity', 0);      
+//$('ul.slides li').css('opacity', 0);      
+
+var iniW = $('ul.slides li').width();
+var iniH = $('ul.slides li').height();
+var diff = 400;
+var altezza = 300;
+
 
 $('.flexslider').flexslider({
     animation: 'slide',
     controlNav: false,
-    slideshowSpeed: 2000,
-    before: function () {
-      TweenLite.to('li.flex-active-slide', 0.6, {opacity:0});
+    slideshowSpeed: 2000000000,
+    start: function() {
+      //$('ul.slides').css({'overflow', 'hidden'});
+      //$('ul.slides li').css('overflow', 'hidden');
+      $('ul.slides>li>img').css({'width':50000,'height':iniH+diff});
+      $('div.flex-viewport').css({'height':altezza});
     },
-    after: function () {
-      TweenLite.to('li.flex-active-slide', 0.6, {opacity:1});
+    before: function (slider) {
+      //TweenLite.to('li.flex-active-slide', 0.6, {opacity:0});
+      //TweenLite.to($(this), 0.6, {opacity:0});      
+      //slider.slides.css('width',iniW*1100%);
+      //TweenLite.fromTo('img.active-image', 3, {width:iniW,height:iniH},{width:iniW+20,height:iniH+20});      
+    },
+    added: function () {
+      //TweenLite.to('li.flex-active-slide', 0.6, {opacity:1});
+     console.log($(this));
+      //TweenLite.to($(this), 0.6, {opacity:1});
+      // $('li.flex-active-slide img').css({
+      //   height: iniH,
+      //   width: iniW
+      // });
+
     }    
 });
 
