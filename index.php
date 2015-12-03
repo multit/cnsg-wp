@@ -5,9 +5,9 @@ get_template_part( 'mobile', get_post_format() );
 ?>
 
 
-
+<section>
 <?php get_template_part( 'hp-icons-map', get_post_format() );   ?>
-
+</section>
 
 
 
@@ -81,8 +81,6 @@ get_template_part( 'mobile', get_post_format() );
 
 
 
-
-
 <section id="charts">
   <div class="row">
     <div class="section-title titolino"><span class="random_colored">Fast </span><b class="random_colored">Facts</b></div>      
@@ -91,12 +89,10 @@ get_template_part( 'mobile', get_post_format() );
     <?php 
       // Parametri num colonne, munero dei grafici
       // Attenzione che se il canvas è a visibility=0 da' errore provare con foundation6?
-      killer_charts_tag (3,3); ?>
+      killer_charts_tag (4,4); ?>
     </div>
 
-    <div class="columns show-for-medium-only">
-    <?php  //killer_charts_tag (3,3); ?>
-    </div>
+
 
 
 
@@ -104,6 +100,25 @@ get_template_part( 'mobile', get_post_format() );
 </section>
     
 
+
+
+<section id="mission">
+  <div class="row"><div class="columns text-center">
+    <div class="section-title titolino"><span class="random_colored">Our </span><b class="random_colored">Mission</b></div> 
+    <p class="titolo big">Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae</p>
+   <p class="data"> sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis v</p>
+    <p>elit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum. Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.
+      
+      Suspendisse lectus leo, consectetur in tempor sit amet, placerat quis neque. Etiam luctus porttitor lorem, sed suscipit est rutrum non. Curabitur lobortis nisl a enim congue semper. Aenean commodo ultrices imperdiet. Vestibulum ut justo vel sapien venenatis tincidunt. Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus. Aliquam ut massa in turpis dapibus convallis. Praesent elit lacus, vestibulum at malesuada et, ornare et est. Ut augue nunc, sodales ut euismod non, adipiscing vitae orci. Mauris ut placerat justo. Mauris in ultricies enim. Quisque nec est eleifend nulla ultrices egestas quis ut quam. Donec sollicitudin lectus a mauris pulvinar id aliquam urna cursus. Cras quis ligula sem, vel elementum mi. Phasellus non ullamcorper urna.    
+        </p></div>
+  </div>
+</section>
+
+<section id="staff">
+  <div class="row">
+    <div class="section-title titolino"><span class="random_colored">Our </span><b class="random_colored">Staff</b></div> 
+  </div>
+</section>
 
 
 

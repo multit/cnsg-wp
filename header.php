@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CNSG</title>
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/libraries.min.css">    
-<!--     <link rel="stylesheet" href="<?php //bloginfo('template_directory'); ?>/css/app.min.css">
- -->
+<!--     <link rel="stylesheet" href="<?php //bloginfo('template_directory'); ?>/css/app.min.css"> -->
     
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/flaticon.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
@@ -15,8 +14,8 @@
 
     
     
-    
-    <script src="<?php bloginfo('template_directory'); ?>/js/vendor/modernizr.min.js"></script>
+     <script src=<?php bloginfo('template_directory'); ?>/scripts/vendor/modernizr.fbe20327.js></script>
+   <!--  <script src="<?php // bloginfo('template_directory'); ?>/js/vendor/modernizr.min.js"></script> -->
 
     <?php wp_head(); ?>
 

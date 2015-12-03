@@ -8,11 +8,12 @@ var app = (function(document, $) {
 		_init = function() {
 
 			$(document).foundation();
-            // needed to use joyride
-            // doc: http://foundation.zurb.com/docs/components/joyride.html
-            $(document).on('click', '#start-jr', function () {
-                $(document).foundation('joyride', 'start');
-            });
+      // needed to use joyride
+      // doc: http://foundation.zurb.com/docs/components/joyride.html
+
+      $(document).on('click', '#start-jr', function () {
+          $(document).foundation('joyride', 'start');
+      });
 			_userAgentInit();
 
 			// SVG / PNG sostituisce i svg con PNG per i browser più vecchi
@@ -22,6 +23,9 @@ var app = (function(document, $) {
 			    return $(this).attr('src').replace('.svg', '.png');
 			  });
 			}
+
+      console.log(Foundation.MediaQuery);
+
 
 
 
@@ -111,8 +115,8 @@ $('.flexslider').flexslider({
     start: function() {
       //$('ul.slides').css({'overflow', 'hidden'});
       //$('ul.slides li').css('overflow', 'hidden');
-      $('ul.slides>li>img').css({'width':50000,'height':iniH+diff});
-      $('div.flex-viewport').css({'height':altezza});
+      //$('ul.slides>li>img').css({'width':50000,'height':iniH+diff});
+      //$('div.flex-viewport').css({'height':altezza});
     },
     before: function (slider) {
       //TweenLite.to('li.flex-active-slide', 0.6, {opacity:0});
@@ -122,7 +126,7 @@ $('.flexslider').flexslider({
     },
     added: function () {
       //TweenLite.to('li.flex-active-slide', 0.6, {opacity:1});
-     console.log($(this));
+     //console.log($(this));
       //TweenLite.to($(this), 0.6, {opacity:1});
       // $('li.flex-active-slide img').css({
       //   height: iniH,
@@ -236,7 +240,7 @@ $('.flexslider').flexslider({
       _animazione_logo = function() {
 
             // variabili altezza maassima di scrollspay e dimensioni CSS iniziali e finali
-            var scrollspay_max = 200;
+            var scrollspy_max = 200;
 
             var endVal = {
               'hb' : parseInt( $('#logo-animato').css('background-size') , 10),
@@ -258,7 +262,7 @@ $('.flexslider').flexslider({
             
             // Imposta lo stato iniziale
 
-            if ( $(window).scrollTop() < scrollspay_max) {
+            if ( $(window).scrollTop() < scrollspy_max) {
 
               $('#logo-spacer.animated').css('height', beginVal.bm );
               $('.logo_large.animated').css({
@@ -284,7 +288,7 @@ $('.flexslider').flexslider({
 
             $(window).scrollspy({ 
                  min: 0 ,
-                 max: scrollspay_max,
+                 max: scrollspy_max,
 
                  onEnter: function(element, position) {
                   //TweenMax.to('.logo',0.4,{ 'padding-top':beginVal['pt'], 'background-size':beginVal['hb'], 'margin-top':beginVal['mt']  });
@@ -301,7 +305,7 @@ $('.flexslider').flexslider({
                  },
                  onTick: function(element, position) {
 
-                    var perc = 100 * position.top / scrollspay_max;
+                    var perc = 100 * position.top / scrollspy_max;
                     perc = perc.toFixed(0);  // Percentuale dal top
                     var bgdiff_abs =  beginVal.hb - calcola_percent( beginVal.hb,endVal.hb,perc ).toFixed(0);
                     var ptdiff_abs =  beginVal.pt - calcola_percent( beginVal.pt,endVal.pt,perc ).toFixed(0);

@@ -12,9 +12,15 @@
   </div>
 </footer>
 
+   
+    <script src=<?php bloginfo('template_directory'); ?>/scripts/vendor.ce619ac9.js></script>
+    
+    <!--
     <script src="<?php bloginfo('template_directory'); ?>/js/vendor/libraries.min.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/js/vendor/foundation.min.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/js/app.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/js/vendor/foundation.min.js"></script> 
+  -->
+
+  <script src="<?php bloginfo('template_directory'); ?>/js/app.js"></script>
    
 	<?php wp_footer(); ?>
 
