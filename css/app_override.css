@@ -71,9 +71,14 @@ h2 {
 /*	font-family: 'Roboto-Slab';
 	font-size: 1.3em;
 	line-height: 1.1em;*/
-	font-family: 'Montserrat-bold';
+/*	font-family: 'Montserrat-bold';
     font-size: 1.2em;
-    line-height: 1.1em;
+    line-height: 1.1em;*/
+    font-family: 'Roboto-Slab';
+    font-size: 1.5em;
+    line-height: 1em;
+    color: #555555;
+    margin-bottom: 10px;
 }
 
 h3 {
@@ -263,16 +268,32 @@ p.logo_en {
 	padding-top: 250px;
 	margin:65px 0 0 0;
 }
-div#iss-logo {
-	position: absolute;
+.iss-logo {
+	/*position: absolute;
 	z-index: 200;
-	top: 86px;
+	top: 86px;*/
 	background: transparent url('../images/iss-logo-small.svg') no-repeat ;
 	width: 50px;	
 	height: 50px;	;
-	margin: 0 0 0 -10px;
+	/*margin: 0 0 0 -10px;*/
 	-webkit-background-size: contain;
 	background-size: contain;
+}
+
+#menutop-logo {
+	position: absolute;
+    margin-top: 27px;
+    margin-left: -15px;
+}
+
+
+#logo-area {
+	border: 0px solid #ccc;
+	position: fixed;
+	top: 67px;
+	z-index: 50;
+	width: 100%;
+	background-color: #FFF;
 }
 
 /*
@@ -343,18 +364,21 @@ div.sitemap b {
 	margin-bottom: 40px;
 }
 .hp-news-bar {
-	height: 10px;
-	display: block;
-	width: 100%;
-	margin-bottom: 6px;
+    height: 20px;
+    display: block;
+    width: 20px;
+    margin-bottom: 6px;
+    float: left;
+    border-radius: 50%;	
 }
 .hp-news-occhiello { 
-	height: 40px; 
-	font-family:'Montserrat-Regular';
-	text-transform: uppercase;
-	font-size: .9em; 
-	line-height: 1.1em;
-	color: #888;
+    height: auto;
+    font-family: 'Roboto-Slab';
+    /* text-transform: uppercase; */
+    font-size: 0.9em;
+    line-height: 1.1em;
+    color: #888;
+    margin: 0 0 15px 28px;
 }
 .hp-news-titolo { 
 	font-family: 'Roboto-Slab'; 
@@ -371,20 +395,22 @@ div.sitemap b {
 }
 .hp-news-dateinfo i.fa {
 	float: right;
-	color: #999;
+	color: #CCCCCC;
 	cursor: pointer;
 	padding: 4px;
-	border-radius: 40%;
+	/*border-radius: 40%;*/
 }
 .hp-news-dateinfo i.fa:hover {
-	background-color: #666;				
+	color: #222222;			
 	}
 .hp-news-info {
 	padding: 0px;
-	border: 0px solid #CCC;
-	height: 0px;
-	margin: 14px 0 10px 10px;
-	overflow: hidden;
+    border: 0px solid #CCC;
+    height: 0px;
+    margin: 14px 0 10px 10px;
+    overflow: hidden;
+    font-size: 0.9em;
+    line-height: 1.3em;
 }
 
 
@@ -696,15 +722,16 @@ div.section-title:after {
 */
 
 nav.menutop {	
-	position: fixed;
-	z-index: 50;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background-color: #FFFFFF;
+
+	/*width: 100%;
+	background-color: #FFFFFF;*/
 }
 
-div.menutop-box  {
+div.menutop  {
+	position: fixed;
+	z-index: 150;
+	top: 0;
+	left: 0;
 	background-color: #F4F4ED;
 	height: 67px;
 	width: 100%;
@@ -746,7 +773,59 @@ ul#social li h3 {
 }
 
 
-/*Mappona fullscreen progetti*/
+
+/*Secondo Menu 
+ ######  ########  ######   #######  ##    ## ########   #######     ##     ## ######## ##    ## ##     ##    
+##    ## ##       ##    ## ##     ## ###   ## ##     ## ##     ##    ###   ### ##       ###   ## ##     ##    
+##       ##       ##       ##     ## ####  ## ##     ## ##     ##    #### #### ##       ####  ## ##     ##    
+ ######  ######   ##       ##     ## ## ## ## ##     ## ##     ##    ## ### ## ######   ## ## ## ##     ##    
+      ## ##       ##       ##     ## ##  #### ##     ## ##     ##    ##     ## ##       ##  #### ##     ##    
+##    ## ##       ##    ## ##     ## ##   ### ##     ## ##     ##    ##     ## ##       ##   ### ##     ##    
+ ######  ########  ######   #######  ##    ## ########   #######     ##     ## ######## ##    ##  #######     
+*/
+
+
+div.menudue {
+	/*display: none;*/
+	position: fixed;
+	z-index: 151;
+	top: -67px;
+	left: 0;
+	width: 100%;
+	height: 67px;
+	padding: 20px 0 10px 0;
+    background: #F4F4ED url('../images/cnsg-minilogo.png') no-repeat 50% 50%;
+    /*	-webkit-background-size: contain;
+	background-size: contain;*/
+}
+
+#menudue-logo-iss {
+	float: right;
+	margin: -31px -10px 0 0;
+}
+.menudue-logo {
+	text-align: center;
+}
+
+.menudue-logo h3#logosx {
+	display: inline;
+	margin-right: 60px;
+}
+.menudue-logo h3#logodx {
+	display: inline;
+}
+
+/*Mappona fullscreen progetti
+
+##     ## ######## ##    ## ##     ##    ######## ##     ## ##       ##        ######   ######  ########  ######## ######## ##    ## 
+###   ### ##       ###   ## ##     ##    ##       ##     ## ##       ##       ##    ## ##    ## ##     ## ##       ##       ###   ## 
+#### #### ##       ####  ## ##     ##    ##       ##     ## ##       ##       ##       ##       ##     ## ##       ##       ####  ## 
+## ### ## ######   ## ## ## ##     ##    ######   ##     ## ##       ##        ######  ##       ########  ######   ######   ## ## ## 
+##     ## ##       ##  #### ##     ##    ##       ##     ## ##       ##             ## ##       ##   ##   ##       ##       ##  #### 
+##     ## ##       ##   ### ##     ##    ##       ##     ## ##       ##       ##    ## ##    ## ##    ##  ##       ##       ##   ### 
+##     ## ######## ##    ##  #######     ##        #######  ######## ########  ######   ######  ##     ## ######## ######## ##    ## 
+
+*/
 
 div#fullscreen-mega-map{
 	background-color: #EFEFE8;
@@ -789,6 +868,12 @@ li.menu-item-object-progetto a {
 ul.sub-menu li.menu-item-object-progetto a {
 	font-family: 'Roboto-Slab';
 	font-size: 15px;
+}
+
+a.inactive-menu-a:hover {
+	text-decoration: none;
+	color: #888;
+	cursor:default;
 }
 
 /*

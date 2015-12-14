@@ -15,12 +15,13 @@ get_template_part( 'mobile', get_post_format() );
 <section id="hp-slider">
   <div class="row">
     
-                    <div class="flexslider">
+               <!--      <div class="flexslider">
                   <ul class="slides">
-                      <li><img src="<?php bloginfo(template_directory ); ?>/images/slide01.jpg" alt=""></li>
-                      <li><img src="<?php bloginfo(template_directory ); ?>/images/slide04.jpg" alt=""></li>
+                      <li><img src="<?php //bloginfo(template_directory ); ?>/images/slide01.jpg" alt=""></li>
+                      <li><img src="<?php //bloginfo(template_directory ); ?>/images/slide04.jpg" alt=""></li>
                   </ul>  
-                  </div>
+                  </div> -->
+                  <img src="<?php bloginfo(template_directory ); ?>/images/HP-big.jpg" alt="">
   </div>
 </section>
 
@@ -39,30 +40,46 @@ get_template_part( 'mobile', get_post_format() );
 <section id="news">
 <div class="row">
 
-    <div id="hp-news-container" class="grid js-masonry" data-masonry-options='{ "itemSelector": ".item"}'> 
+    <div id="hp-news-container" class="grid js-masonry" data-masonry-options='{ "itemSelector": ".hp-news", "animated":true}'> 
 
     <?php  if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
               
-             <div class="item columns small-12 medium-4 large-3">
-                 <div class="hp-news">
+             <div class="hp-news columns small-12 medium-4 large-3">
+
                     <?php
-                        $categoria = get_the_category();                      
-                        $tt = $categoria[0]->taxonomy .'_' . $categoria[0]->term_id;                        
-                        $rl_category_color = get_field('colore_della_categoria', $tt);
+                      // Settiamo alcune variabili
+                      $categorie = get_the_terms( $post->ID, "progetto" );
+
+                      $parent = get_term($categorie[0]->parent,"progetto" );
+                      if ($parent->term_id) {
+                          $rl_res = $parent->taxonomy . '_' .  $parent->term_id;
+                          $rl_category_color = get_field('colore_della_categoria',$rl_res );
+                          $nome_categoria = $parent->name;
+                      } else {
+                          //print_r($categorie[0]);
+                          $rl_res = $categorie[0]->taxonomy . '_' .  $categorie[0]->term_id;
+                          $rl_category_color = get_field('colore_della_categoria',$rl_res );
+                          $nome_categoria = $categorie[0]->name;
+                      }
+                      
 
                     ?>
-                     <div class="hp-news-bar colore01" style="background-color:<?php echo $rl_category_color; ?>"></div>
-                     <div class="hp-news-occhiello"><?php echo $categoria[0]->name; ?></div>
-                     <div class="hp-titolo-box"><a class="" href="<?php the_permalink(); ?>"><h2 style="color:<?php echo $rl_category_color; ?>;"><?php echo get_the_title(); ?></h1></a></div>
-                     <div class="hp-news-dateinfo closed">Maggio 2015
-                        <i class="fa fa-plus info-expander" id=""></i>
-                        <div class="hp-news-info" id="info-panel-17">
-                            <b>keywords:</b> people, market<br />
-                            <b>region:</b> Africa, Oceania
+                     <div class="hp-news-bar" style="background-color:<?php echo $rl_category_color; ?>"></div>
+                     <div class="hp-news-occhiello"><?php echo $nome_categoria ?></div>
+                     <div class="hp-titolo-box"><a class="" href="<?php the_permalink(); ?>">
+                      <h2 style="color:<?php //echo $rl_category_color; ?>;"><?php echo the_title(); ?></h1></a></div>
+                     <div class="hp-news-dateinfo closed"><?php echo get_the_date(); ?>
+                        <i class="fa fa-bars info-expander" id="" panel="info-panel-<?php the_ID(); ?>" ></i>
+                        <div class="hp-news-info" id="info-panel-<?php the_ID(); ?>">
+                            <b>keywords: </b><?php the_tags(""); ?><br />
+                            <b>region: </b><a href="<?php get_term_link( the_field('regione_geografica') ); ?>"><?php the_field('regione_geografica') ?></a>
                         </div>            
                      </div>
                      <div class="hp-news-testo"><?php echo get_the_content('continua'); ?></div>
-                 </div>
+                 
+
+
              </div>  <!-- End div Item -->
 
             <?php endwhile; ?>
@@ -120,6 +137,20 @@ get_template_part( 'mobile', get_post_format() );
   </div>
 </section>
 
+
+
+<section id="test">
+  <div class="row">area test slide
+
+  <?php 
+
+  $bigslides = get_post(251);
+  //echo $bigslides->post_content;
+  $output = do_shortcode($bigslides->post_content);
+  echo $output;
+  ?>
+  </div>
+</section>
 
 
 

@@ -1,0 +1,4 @@
+.git/
+.DS_Store
+da_escludere.lst
+.gitignore

@@ -24,7 +24,7 @@ var app = (function(document, $) {
 			  });
 			}
 
-      console.log(Foundation.MediaQuery);
+      //console.log(Foundation.MediaQuery);
 
 
 
@@ -138,6 +138,8 @@ $('.flexslider').flexslider({
 
 
 
+
+
 /*
  ######   #######  ##        #######  ########  #### 
 ##    ## ##     ## ##       ##     ## ##     ##  ##  
@@ -179,13 +181,54 @@ $('.flexslider').flexslider({
       });
 
 
+
+/* 
+##    ## ######## ##      ##  ######  
+###   ## ##       ##  ##  ## ##    ## 
+####  ## ##       ##  ##  ## ##       
+## ## ## ######   ##  ##  ##  ######  
+##  #### ##       ##  ##  ##       ## 
+##   ### ##       ##  ##  ## ##    ## 
+##    ## ########  ###  ###   ######  
+*/
+
+
+$('.info-expander').click(function(event) {
+  /* Act on the event */
+  var panel = $(this).next();
+  if ( $(panel).css('height') == '0px' ) {
+    $(panel).css('height', 'auto');
+  } else {
+    $(panel).css('height',0)
+  }
+  
+});
+
+
+/*
+##     ## ######## ##    ## ##     ## 
+###   ### ##       ###   ## ##     ## 
+#### #### ##       ####  ## ##     ## 
+## ### ## ######   ## ## ## ##     ## 
+##     ## ##       ##  #### ##     ## 
+##     ## ##       ##   ### ##     ## 
+##     ## ######## ##    ##  #######  
+*/
+
       $('.menuAnimated').click(function(event) {
         var tl = new TimelineLite();
         tl.to($(this), 0.1, {'margin-top':10}).to($(this), 0.3, {'margin-top':0});
       });
 
 
+     // Inattiva i menu principali
 
+      $('li.menu-item-has-children>a').each(function(index, el) {
+        $(this).removeAttr('href');
+        $(this).addClass('inactive-menu-a')
+      });
+
+      
 
       // Mostra la mappa full screen del sito
 
@@ -240,22 +283,22 @@ $('.flexslider').flexslider({
       _animazione_logo = function() {
 
             // variabili altezza maassima di scrollspay e dimensioni CSS iniziali e finali
-            var scrollspy_max = 200;
+            var scrollspy_max = 570;
 
             var endVal = {
               'hb' : parseInt( $('#logo-animato').css('background-size') , 10),
               'pt' : parseInt( $('#logo-animato').css('padding-top') , 10),
               'mt' : parseInt( $('#logo-animato').css('margin-top') , 10),
               'bm' : parseInt( $('#logo-spacer.animated').css('height') , 10),
-              'issW' : parseInt( $('#iss-logo').css('width') , 10),
-              'issH' : parseInt( $('#iss-logo').css('height') , 10)
+              'issW' : parseInt( $('#menutop-logo').css('width') , 10),
+              'issH' : parseInt( $('#menutop-logo').css('height') , 10)
             };
 
             var beginVal = {
               'hb' : 160,  // Dimensione iniziale logo
               'pt' : 180,
               'mt' : 40,
-              'bm' : 310,  // Altezza del logo-spacer.animated
+              'bm' : 323,  // Altezza del logo-spacer.animated
               'issW' : 61,
               'issH' : 61
             };      
@@ -270,14 +313,12 @@ $('.flexslider').flexslider({
                       marginTop: beginVal.mt,
                       backgroundSize: beginVal.hb
                });
-              $('#iss-logo.animated').css({
+              $('#menutop-logo.animated').css({
                       width: beginVal.issW,
                       height: beginVal.issH                      
                });
               
             }
-
-
           
 
             var calcola_percent = function (begin,end,perc) {
@@ -291,20 +332,22 @@ $('.flexslider').flexslider({
                  max: scrollspy_max,
 
                  onEnter: function(element, position) {
-                  //TweenMax.to('.logo',0.4,{ 'padding-top':beginVal['pt'], 'background-size':beginVal['hb'], 'margin-top':beginVal['mt']  });
-                  
+                    TweenMax.to('div.menudue',0.8,{ 'top': -67 });
+                    TweenMax.to('div#logo-area',0.8,{ 'top': 67 });
                  },
-                 onLeave: function(element, position) {   
-                    //TweenMax.to('div.logo_large.animated',0.8,{ 'padding-top':endVal['pt'], 'background-size':endVal['hb'], 'margin-top':endVal['mt']  });
+                 onLeave: function(element, position) {
+                    console.log('exit');
                     $('div.logo_large.animated').css({ 'padding-top':endVal.pt, 'background-size':endVal.hb, 'margin-top':endVal.mt });
                     $('#logo-spacer.animated').css({'height': endVal.bm});
-                    $('#iss-logo.animated').css({
+                    $('#menutop-logo.animated').css({
                       width: endVal.issW,
                       height: endVal.issW
                     });
+                    TweenMax.to('div.menudue',0.8,{ 'top': 0 });
+                    TweenMax.to('div#logo-area',0.8,{ 'top': -200 });
+
                  },
                  onTick: function(element, position) {
-
                     var perc = 100 * position.top / scrollspy_max;
                     perc = perc.toFixed(0);  // Percentuale dal top
                     var bgdiff_abs =  beginVal.hb - calcola_percent( beginVal.hb,endVal.hb,perc ).toFixed(0);
@@ -315,9 +358,12 @@ $('.flexslider').flexslider({
                     TweenMax.to('div.logo_large.animated',0.4,{ 'padding-top':ptdiff_abs, 'background-size':bgdiff_abs, 'margin-top':mtdiff_abs });
                     TweenMax.to('#logo-spacer.animated',0.8,{'height': bmdiff_abs });
 
+                    // $('div.logo_large.animated').css({ 'padding-top':ptdiff_abs, 'background-size':bgdiff_abs, 'margin-top':mtdiff_abs });
+                    // $('#logo-spacer.animated').css({'height': bmdiff_abs });
+
                     var issWdiff_abs =  beginVal.issW - calcola_percent( beginVal.issW,endVal.issW,perc ).toFixed(0);
                     var issHdiff_abs =  beginVal.issH - calcola_percent( beginVal.issH,endVal.issH,perc ).toFixed(0);
-                    TweenMax.to('#iss-logo.animated',0.8,{'width': issWdiff_abs, 'height':issHdiff_abs });
+                    TweenMax.to('#menutop-logo.animated',0.8,{'width': issWdiff_abs, 'height':issHdiff_abs });
 
 
                  }
