@@ -13,16 +13,16 @@ get_template_part( 'mobile', get_post_format() );
 
 
 <section id="hp-slider">
-  <div class="row">
-    
-               <!--      <div class="flexslider">
-                  <ul class="slides">
-                      <li><img src="<?php //bloginfo(template_directory ); ?>/images/slide01.jpg" alt=""></li>
-                      <li><img src="<?php //bloginfo(template_directory ); ?>/images/slide04.jpg" alt=""></li>
-                  </ul>  
-                  </div> -->
-                  <img src="<?php bloginfo(template_directory ); ?>/images/HP-big.jpg" alt="">
-  </div>
+
+
+  <?php 
+            $bigslides = get_post(251);
+            $output = do_shortcode($bigslides->post_content);
+            echo $output;
+  ?>
+
+
+
 </section>
 
 
@@ -57,7 +57,6 @@ get_template_part( 'mobile', get_post_format() );
                           $rl_category_color = get_field('colore_della_categoria',$rl_res );
                           $nome_categoria = $parent->name;
                       } else {
-                          //print_r($categorie[0]);
                           $rl_res = $categorie[0]->taxonomy . '_' .  $categorie[0]->term_id;
                           $rl_category_color = get_field('colore_della_categoria',$rl_res );
                           $nome_categoria = $categorie[0]->name;
@@ -65,10 +64,10 @@ get_template_part( 'mobile', get_post_format() );
                       
 
                     ?>
-                     <div class="hp-news-bar" style="background-color:<?php echo $rl_category_color; ?>"></div>
-                     <div class="hp-news-occhiello"><?php echo $nome_categoria ?></div>
+                    <!--  <div class="hp-news-bar" style="background-color:<?php echo $rl_category_color; ?>"></div> -->
+                     <div class="hp-news-occhiello" style="color:<?php echo $rl_category_color; ?>;"><?php echo $nome_categoria ?></div>
                      <div class="hp-titolo-box"><a class="" href="<?php the_permalink(); ?>">
-                      <h2 style="color:<?php //echo $rl_category_color; ?>;"><?php echo the_title(); ?></h1></a></div>
+                      <h2 style="color:<?php echo $rl_category_color; ?>;"><?php echo the_title(); ?></h1></a></div>
                      <div class="hp-news-dateinfo closed"><?php echo get_the_date(); ?>
                         <i class="fa fa-bars info-expander" id="" panel="info-panel-<?php the_ID(); ?>" ></i>
                         <div class="hp-news-info" id="info-panel-<?php the_ID(); ?>">
@@ -132,24 +131,40 @@ get_template_part( 'mobile', get_post_format() );
 </section>
 
 <section id="staff">
-  <div class="row">
-    <div class="section-title titolino"><span class="random_colored">Our </span><b class="random_colored">Staff</b></div> 
-  </div>
+
 </section>
 
 
 
-<section id="test">
-  <div class="row">area test slide
-
-  <?php 
-
-  $bigslides = get_post(251);
-  //echo $bigslides->post_content;
-  $output = do_shortcode($bigslides->post_content);
-  echo $output;
-  ?>
+<section id="maps">
+  <div class="row">
+    <div class="columns large-12"><div class="section-title titolino">
+      <span class="random_colored">Global Health </span><b class="random_colored">World Maps</b></div> </div>
   </div>
+
+  <div class="row">
+    <div class="columns large-4">
+      <p class="titolo big">Our Maps</p>      
+    </div>
+    <div class="columns large-3"><div class="button float-right">Filtra mappe:&nbsp;&nbsp;<i class="fa fa-bars"></i></div></div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="columns large-4"><p class="hp-news-titolo">Mappa 01</p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur cumque voluptas, molestiae, eos culpa quod sint alias nemo perferendis optio praesentium molestias rem aut eaque repellat fuga velit labore explicabo!</div>
+    <div class="columns-large-8"><img src="http://www.andreafiorelli.com/cnsg/wp-content/uploads/2016/04/Untitled-1.jpg" alt=""></div>
+  </div>
+  <div class="row">
+    <div class="columns large-4"><p class="hp-news-titolo">Mappa 02</p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur cumque voluptas, molestiae, eos culpa quod sint alias nemo perferendis optio praesentium molestias rem aut eaque repellat fuga velit labore explicabo!</div>
+    <div class="columns-large-8"><img src="http://www.andreafiorelli.com/cnsg/wp-content/uploads/2016/04/Untitled-2.jpg" alt=""></div>
+  </div>
+  <div class="row">
+    <div class="columns large-4"><p class="hp-news-titolo">Mappa 03</p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur cumque voluptas, molestiae, eos culpa quod sint alias nemo perferendis optio praesentium molestias rem aut eaque repellat fuga velit labore explicabo!</div>
+    <div class="columns-large-8"><img src="http://www.andreafiorelli.com/cnsg/wp-content/uploads/2016/04/Untitled-3.jpg" alt=""></div>
+  </div>
+
+
 </section>
 
 

@@ -21,6 +21,13 @@
 
   </head>
   <body>
+    
+    <?php if (is_home()) : ?>
+        <div id="loader">
+            <img id="ajax-loader" src="<?php bloginfo('template_directory'); ?>/images/ajax-loader01.gif" alt="">
+        </div>
+     <?php endif; ?>
+
 
 
 <header class="show-for-medium-up">  <!-- header -->
@@ -91,10 +98,11 @@
 
                 <div class="columns medium-8 show-for-medium-up">
                     <ul class="inline-list">
-                        <li class="menu-btn"><a href="" class="menuAnimated"><h3>Mission</h3></a></li>
-                        <li class="menu-btn"><a href="" class="menuAnimated"><h3>Staff</h3></a></li>
+                        <li class="menu-btn"><a href="" class="menuAnimated HPscroller" section="#mission"><h3>Mission</h3></a></li>                        
+                        <li class="menu-btn"><a href="" class="menuAnimated HPscroller" section="#staff"><h3>Staff</h3></a></li>
                         <li class="menu-btn"><a href="#" id="menutop_projects" class="fullscreen-map-toggler menuAnimated"><h3>Projects&nbsp;<i id="menuarrow"class="fa fa-chevron-down" style="display:inline"></i></h3></a></li>
-                        <li class="menu-btn"><a href="" class="menuAnimated"><h3>News</h3></a></li>
+                        <li class="menu-btn"><a href="" class="menuAnimated HPscroller" section="#news"><h3>News</h3></a></li>
+                        <li class="menu-btn"><a href="" class="menuAnimated HPscroller" section="#maps"><h3>Maps</h3></a></li>
                         <li class="menu-btn"><a href="" class="menuAnimated"><h3>Search</h3></a></li>
                     </ul>
                 </div>
@@ -136,10 +144,10 @@
 
         <div class="menudue"><div class="row"><!-- menudue -->
 
-            <div class="columns small-1"><i class="fa fa-bars"></i></div>
+            <div class="columns small-1"><i class="fa fa-bars fullscreen-map-toggler"></i></div>
             <div class="columns small-10 small-centered menudue-logo text-center">
-                <h3 id="logosx">centro nazionale salute globale</h3>
-                <h3 id="logodx">italian center for global health</h3>                
+               <a href="."> <h3 id="logosx">centro nazionale salute globale</h3>
+                   <h3 id="logodx">italian center for global health</h3>  </a>
             </div>
 
             <div class="columns small-1">
@@ -154,7 +162,7 @@
 
         <!-- area logo-area -->
         <div id="logo-area">
-                <div class="row show-for-large-up">
+                <div class="row show-for-medium-up">
                     <a href="<?php bloginfo('url'); ?>">
                     
                     <div id="menutop-logo" class="iss-logo <?php (is_home())  ? print 'animated' :'' ?>"></div>
@@ -170,7 +178,7 @@
         <!-- end logo-area -->
             
 
-        <div class="row show-for-large-up">
+        <div class="row show-for-medium-up">
             <div id="logo-spacer" class="<?php (is_home())  ? print 'animated' :'' ?>">&nbsp;</div>
         </div>
 

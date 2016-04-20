@@ -1,44 +1,34 @@
 <?php get_header(); ?>
 
+
+
+
 <?php 
 
 // Settaggio di alcune variabili iniziali
 
 
-$staff = array();
-$documenti = array();
-$pubblicazioni = array();
+    wp_reset_postdata();  
+    setup_postdata($post);
+    $categories = get_the_category();
 
-$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-$parent = get_term($term->parent, get_query_var('taxonomy') );
-$rl_res = $parent->taxonomy . '_' .  $parent->term_id;
-$rl_category_color = get_field('colore_della_categoria',$rl_res );
-
-
-
-foreach ($posts as $post) {
-
-    switch ($post->post_type ) {
-        case 'sommario':
-            $sommario = $post;     
-            break;
-        case 'pubblicazione':
-            $pubblicazioni[] = $post;        
-            break;
-        case 'documento':
-            $documenti[] = $post;     
-            break;
-        case 'staff':
-            $staff[] = $post;     
-            break;                                    
-        
-        default:
-            // code...
-            break;
+    if ( ! empty( $categories ) ) {  
+    foreach( $categories as $category ) {
+        $categoria .= esc_html( $category->name );
+        $categoria_parent = get_category ($category->category_parent);  // id della categoria genitore
+        $categoriaID = $category->term_id;
+        }
     }
-    
-}
 
+    if(function_exists('rl_color')){
+        $rl_category_color = rl_color($categoria_parent->term_id);
+    } else  {
+        $rl_category_color = '#ccc';
+    }
+
+    // print_r($categoria_parent);
+    // Spinge la variabile come post ai vari templati caricat con get_template_part
+    set_query_var( 'rl_category_color', $rl_category_color );
 
 ?>
 
@@ -66,13 +56,43 @@ foreach ($posts as $post) {
 
 <div class="row">
   <div class="articolo columns medium-10 medium-push-1 large-6 large-push-2">
-    
+
 
     <div class="first-row-padded">
-            <h3 style="color:<?php echo $rl_category_color; ?>"><?php echo $parent->name;?></h3>
-            <h1><?php echo $sommario->post_title ?></h1>
+
+
+
+
+      <h3 style="color:<?php echo $rl_category_color; ?>"><?php echo $categoria_parent->name ?></h3>
+      <h1><?php the_title(); ?></h1>
     </div>
-            <?php echo $sommario->post_content;  ?>
+    <?php the_content(); ?>
+
+<?php
+
+$staff_object = get_field('staff');
+
+//print_r($staff_object);
+
+if( $staff_object ): 
+
+    // override $post
+    $post = $staff_object;
+    setup_postdata( $post ); 
+
+    ?>
+
+
+    <?php foreach( $staff_object as $post): // variable must be called $post (IMPORTANT) ?>
+        <?php setup_postdata($post); ?>
+        <li>
+            <span>Post Object Custom Field Nome: <?php echo get_the_title($post_object->ID); ?></span>
+        </li>
+    <?php endforeach; ?>
+
+
+    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+<?php endif; ?>
 
   </div>
 
@@ -97,31 +117,40 @@ foreach ($posts as $post) {
 
     <div class="first-row-padded show-for-large-up ">
 
-            <?php 
-            set_query_var( 'rl_category_color', $rl_category_color );
-            get_template_part( 'share-template', get_post_format() );  ?>
+            <?php get_template_part( 'share-template', get_post_format() );  ?>
 
     </div>
 
-        <h2 style="color:<?php echo $rl_category_color; ?>">Staff</h2>
-        
-        <ul class="staff-list">
-        
-        <?php foreach ( $staff as $person ) : ?>
-        
-            <li>
-                <?php echo get_the_post_thumbnail( $person->ID, 'thumbnail',  array( 'class' => 'staff-mini-image' ) ); ?>
-                
-                <a href="<?php echo get_permalink($person->ID); ?>"><h4 style="color:<?php echo $rl_category_color; ?>">
-                    <?php echo $person->post_title ?></h4></a>
-                
-                <h5><?php echo get_field('ruolo',$person->ID); ?><br>
-                <a href="mailto:<?php echo get_field('email',$person->ID); ?>"><b><?php echo get_field('email',$person->ID); ?></b></a>
+    <div class="colored-box" style="background-color:<?php echo $rl_category_color; ?>"></div>
 
+
+      <h2>Staff</h2>
+
+
+        <ul class="staff-list">
+        <?php
+        $args = array( 'category' => $categoriaID   , 'post_type' => 'staff' );
+        $staffMembers = get_posts( $args );
+        foreach ( $staffMembers as $post ) : setup_postdata( $post ); 
+                
+
+            ?>        
+            <li>
+                <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'staff-mini-image' ) ); ?>
+                <a href="<?php the_permalink(); ?>"><h4 style="color:<?php echo $rl_category_color; ?>"><?php the_title(); ?></h4></a>
+                <h5><?php the_field('ruolo'); ?><br>
+                <a href="mailto:<?php the_field('email'); ?>"><b><?php the_field('email'); ?></b></a>
+                <i><?php  
+                    
+
+                ?></i>
                 </h5>
             </li>
-        <?php endforeach; ?>
+        <?php endforeach; 
+        wp_reset_postdata();?>
         </ul>
+
+
 
 
 
@@ -149,55 +178,62 @@ foreach ($posts as $post) {
   <div class="columns medium-5  medium-pull-1 large-3 large-push-0">
 
         <div class="first-row-padded show-for-large-up">
-             <?php echo get_the_post_thumbnail( $sommario->ID, 'thumbnail' ); ?>
+            <?php the_post_thumbnail( 'thumbnail', array( 'class' => '' ) ); ?>
         </div>
 
         <div class="right-column">
-       
-        
+        <?php
+        $args = array( 'category' => $categoriaID, 'post_type' => 'documento' );
+        $documenti = get_posts( $args );
 
-        <?php if (!empty($documenti)): ?>            
-        
-        <h2 style="color:<?php echo $rl_category_color; ?>">Documents</h2>
-        <ul>
-            <?php foreach ( $documenti as $doc ) : 
-                $file = get_field('file',$doc->ID); 
-                $abstract =  get_field('abstract',$doc->ID); 
-                ?>
-                <li>
-                    <a class="pdf-download" href="<?php echo $file['url']; ?>"><?php echo $doc->post_title; ?></a>
-                    <div class="pdf-abstract"><?php echo $abstract; ?></div>
-                </li>
-            <?php endforeach; ?>                
+        if (!empty($documenti)):  
+        ?>    
+            <div class="colored-box" style="background-color:<?php echo $rl_category_color; ?>"></div>
+            <h2>Documents</h2>
+            <ul>
+            <?php foreach ( $documenti as $post ) : setup_postdata( $post ); 
+                $file = get_field('file'); ?>
+                <li><a class="pdf-download" href="<?php echo $file['url']; ?>"><?php echo get_the_title($post->id); ?></a></li>
+            <?php endforeach; 
+
+            wp_reset_postdata();?>
         </ul>
        <?php endif; ?>
 
 
-        <?php if (!empty($pubblicazioni)): ?>            
-       
-        <h2 style="color:<?php echo $rl_category_color; ?>">Pubblicazioni</h2>
-        <ul>
-            <?php foreach ($pubblicazioni as $pubb ) : 
-                $file = get_field('file',$pubb->ID); 
-                $abstract =  get_field('abstract',$pubb->ID);
+        <?php
+        $args = array( 'category' => $categoriaID, 'post_type' => 'pubblicazione' );
+        $documenti = get_posts( $args );
+
+        if (!empty($documenti)):  
+        ?>    
+            <div class="colored-box" style="background-color:<?php echo $rl_category_color; ?>"></div>
+            <h2>Papers</h2>
+            <ul>
+            <?php foreach ( $documenti as $post ) : setup_postdata( $post );
+            $file = get_field('file'); ?>
+            <li><a class="pdf-download" href="<?php echo $file['url']; ?>"><?php echo get_the_title($post->id); ?>
+                <?php 
+                $dimensione = filesize( get_attached_file ( $file['id'] )); 
+                echo '<b class="attach_size" >' . size_format($dimensione) . '</b></a>';
                 ?>
-                <li><a class="pdf-download" href="<?php echo $file['url']; ?>"><?php echo $pubb->post_title; ?></a>
-                <div class="pdf-abstract"><?php echo $abstract; ?></div>
-                </li>
-            <?php endforeach; ?>                
+            </li>
+
+    
+            
+
+            <?php endforeach; 
+
+            wp_reset_postdata();?>
         </ul>
-       <?php endif; ?>       
-
-
-
-
-
-
-
-
+       <?php endif; ?>
+            </div>
 
         </div>
-   </div>     
+        
+
+
+</div>
 
 </article>
 
