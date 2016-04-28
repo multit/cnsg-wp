@@ -17,9 +17,5 @@
         </div>
 
 
-  
-
-
-
     </div> <!-- end row -->
 </article>

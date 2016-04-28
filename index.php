@@ -1,38 +1,22 @@
 <?php get_header(); ?>
 
 <?php
-get_template_part( 'mobile', get_post_format() );  
+  //get_template_part( 'mobile', get_post_format() );  
+  get_template_part( 'mobile');
 ?>
 
 
-<section>
-<?php get_template_part( 'hp-icons-map', get_post_format() );   ?>
-</section>
 
 
 
 
 <section id="hp-slider">
-
-
   <?php 
             $bigslides = get_post(251);
             $output = do_shortcode($bigslides->post_content);
             echo $output;
   ?>
-
-
-
 </section>
-
-
-
-
-  
-
-
-     
-
 
 
 
@@ -49,9 +33,9 @@ get_template_part( 'mobile', get_post_format() );
 
                     <?php
                       // Settiamo alcune variabili
-                      $categorie = get_the_terms( $post->ID, "progetto" );
+                      $categorie = get_the_terms( $post->ID, "categorie_progetto" );
 
-                      $parent = get_term($categorie[0]->parent,"progetto" );
+                      $parent = get_term($categorie[0]->parent,"categorie_progetto" );
                       if ($parent->term_id) {
                           $rl_res = $parent->taxonomy . '_' .  $parent->term_id;
                           $rl_category_color = get_field('colore_della_categoria',$rl_res );

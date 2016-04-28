@@ -144,7 +144,7 @@ $('.info-expander').click(function(event) {
       // Mostra la mappa full screen del sito
 
       $('.fullscreen-map-toggler').click(function(event) {
-          event.preventDefault();          
+          //event.preventDefault();          
           toggleFullscreenMap();                
       });      
 

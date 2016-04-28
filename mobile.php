@@ -38,7 +38,7 @@
             // 'menu_class' => 'off-canvas-list left-menu-mobile cazzon',
             'link_before' => '<h3>',
             'link_after' => '</h3>',
-            'walker' => new Menu_Principale_Mobile_Walker()
+            //'walker' => new Menu_Principale_Mobile_Walker()
         );
         wp_nav_menu($args);
         ?>

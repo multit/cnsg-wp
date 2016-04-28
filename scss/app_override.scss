@@ -28,6 +28,7 @@ colore:#008173
 
 
 $colore-amministrazione: #F4F4ED;
+
 $font-principale: 'Roboto-Slab-light';
 $font-principale-bold: 'Roboto-Slab-regular';
 $font-secondaria: 'Montserrat-regular';
@@ -950,4 +951,85 @@ li.has-submenu i {
 	padding: 0 0 0 10px;
 	font-size: 0.6em;
 }
+
+
+
+
+/*######  ##       ##     ##  ######   #### ##    ##  ######  
+##     ## ##       ##     ## ##    ##   ##  ###   ## ##    ## 
+##     ## ##       ##     ## ##         ##  ####  ## ##       
+########  ##       ##     ## ##   ####  ##  ## ## ##  ######  
+##        ##       ##     ## ##    ##   ##  ##  ####       ## 
+##        ##       ##     ## ##    ##   ##  ##   ### ##    ## 
+##        ########  #######   ######   #### ##    ##  ######  */
+
+
+
+li p.flex-caption {
+	font-family: $font-principale;
+    color: #FFFFFF;
+    background-color: #000000; 
+    margin: 0 20px 0 0;
+    padding: 20px;
+    position: absolute;
+    top: 35%;
+    left: 60%;
+    font-size: 1.8em;
+    line-height: 1em;
+    font-weight: 700;
+}
+li p.flex-caption.small {
+  color: #FFFFFF;
+  background-color: #000000;
+  position: absolute;  
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  font-size: 1.6em;
+  padding: 20px;
+  font-size:  1.2em;
+  line-height: 1.1em;
+  font-weight: 300;
+}
+.slide-cat {
+  display: block;
+  font-family: $font-secondaria;
+  text-transform: uppercase;
+  font-size: 0.5em; 
+  line-height: 1.2em;
+  width: auto;
+}
+
+.slide-cat-small {
+  display: block;
+  margin: 0 0 5px 0;
+  font-family: $font-secondaria;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  line-height: 1.2em;
+  width: auto;
+
+}
+
+div.chart-numerone {
+	font-family: $font-principale-bold;
+	color: #999;
+	font-size: 1.9em;	
+    position: absolute;
+    top: 0;
+    left: 0;    
+    width: 100%;
+    text-align: center;
+}
+
+
+div.chart-label {	
+	font-family: $font-principale;
+    color: #6D6737;
+    font-size: 1.2em;
+    line-height: 1em;
+    margin: 5% 0 0 0;
+}
+
 

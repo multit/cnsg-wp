@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <div class="row">
-
   <div class="columns small-12 medium-9" id="colonna-articolo">
     <?php
     // Start the loop.
@@ -15,14 +14,11 @@
   </div>
 
   <div class="columns small-12 medium-3" id="colonna-side">
-      <div class="titolino"><span class="random_colored">Related </span><b class="random_colored">Articles</b> </div>
-      
+      <div class="titolino">
+        <span class="random_colored">Related </span><b class="random_colored">Articles</b>
+      </div>      
   </div>
-
-
 </div><!-- .row -->
-
-
 
 
 

@@ -36,7 +36,13 @@
     <div id="fullscreen-mega-map">
     <div class="row">
 
-    <?php get_template_part( 'fullscreen-mega-map', get_post_format() );   ?>
+    <?php 
+    // Rimossa la mappa con tutte I progetti te inserita la mappa con le icone
+    get_template_part( 'fullscreen-mega-map', get_post_format() ); 
+    //get_template_part( 'hp-icons-map', get_post_format() );   
+
+
+    ?>
 
     </div></div>
 <!-- End Site mega map -->
